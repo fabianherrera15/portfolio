@@ -56,20 +56,17 @@
                     <b-row>
                         <h2 class="mb-4">About</h2>
                     </b-row>
-                    <b-row>
-                        <b-col>
-                            <b-card class="border-0 h-100" no-body>
-                                <b-row no-gutters>
-                                    <b-col lg="7">
-                                        <b-card-img src="images/DSC_1116.jpg" alt="" class="rounded-0"></b-card-img>
-                                    </b-col>
-                                    <b-col lg="5">
-                                        <b-card-body class="p-4" title="">
-                                            <b-card-text v-html="$t('about')"></b-card-text>
-                                        </b-card-body>
-                                    </b-col>
-                                </b-row>
+                    <b-row align-v="center" class="pt-lg-5">
+                        <b-col lg="6">
+                            <b-card-img src="images/DSC_1116.jpg" alt="" class="rounded-0 d-block d-lg-none"></b-card-img>
+                            <b-card class="border-0 shadow-custom" no-body>
+                                <b-card-body class="p-4" title="">
+                                    <b-card-text v-html="$t('about')"></b-card-text>
+                                </b-card-body>
                             </b-card>
+                        </b-col>
+                        <b-col lg="6" class="d-none d-lg-block">
+                            <b-img src="images/DSC_1116.jpg" alt="" class="rounded-0 inset"></b-card-img>
                         </b-col>
                     </b-row>
                 </b-container>
