@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Fabian Herrera: Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css//bootstrap-vue.min.css"/>
+    <link rel="stylesheet" href="css/fonts.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <b-container fluid class="px-0 bg-gradient-default">
+            <b-row align-h="center">
+                <b-col cols="4" md="2">
+                    <b-img fluid class="rounded-circle p-4 w-100" src="images/avatar.jpg"></b-img>
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col>
+                    <h1 class="text-light text-center">Fabian Herrera</h1>
+                </b-col>
+            </b-row>
+        </b-container>
+        <b-navbar sticky v-b-scrollspy="60" class="bg-white">
+            <b-button v-b-toggle.sidebar>Toggle Sidebar</b-button>
+            <b-navbar-brand href="#">Navbar</b-navbar-brand>
+            <b-navbar-nav class="ml-auto">
+                <!-- <b-nav-item :href="'#item-'+index" v-for="(section, index) in $t('sections')">{{section}}</b-nav-item> -->
+            </b-navbar-nav>
+        </b-navbar>
+        <b-sidebar id="sidebar" title="Sidebar" shadow>
+            <div class="px-3 py-2">
+                <b-nav v-b-scrollspy vertical>
+                    <b-nav-item :href="'#item-'+index" v-for="(section, index) in $t('sections')">{{section}}</b-nav-item>
+                </b-nav>
+            </div>
+        </b-sidebar>
+        <main>
+            <!-- <b-container class="bg-white">
+                <b-row>
+                    <b-col>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h2>
+                        <h4>Heading 4</h2>
+                        <h5>Heading 5</h2>
+                        <h6>Heading 6</h2>
+                    </b-col>
+                </b-row>
+            </b-container> -->
+            <section id="item-0" class="py-5">
+                <b-container>
+                    <b-row>
+                        <h2 class="mb-4">About</h2>
+                    </b-row>
+                    <b-row>
+                        <b-col>
+                            <b-card class="border-0 h-100" no-body>
+                                <b-row no-gutters>
+                                    <b-col lg="7">
+                                        <b-card-img src="images/DSC_1116.jpg" alt="" class="rounded-0"></b-card-img>
+                                    </b-col>
+                                    <b-col lg="5">
+                                        <b-card-body class="p-4" title="">
+                                            <b-card-text v-html="$t('about')"></b-card-text>
+                                        </b-card-body>
+                                    </b-col>
+                                </b-row>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </section>
+            <section id="item-1" class="py-5">
+                <b-container>
+                    <b-row>
+                        <h2 class="mb-4">Portfolio</h2>
+                    </b-row>
+                    <b-row>
+                        <b-col lg="4" class="mb-3" v-for="(project, index) in $t('projects')">
+                            <b-card
+                                title-tag="h4"
+                                :img-src="project.thumbnail"
+                                img-alt=""
+                                img-top
+                                tag="article"
+                                class="shadow-custom border-0 h-100"
+                                no-body>
+                                <b-card-body class="p-4">
+                                    <b-card-title v-html="project.title"></b-card-title>
+                                    <b-card-text v-html="project.summary"></b-card-text>
+                                </b-card-body>
+                                <b-card-footer class="bg-transparent p-4 pt-0 border-0">
+                                    <b-button v-b-modal="project.id" variant="primary" v-text="$t('readMore')"></b-button>
+                                </b-card-footer>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </section>
+            <section id="item-2" class="pt-5">
+                <b-container>
+                    <b-row>
+                        <h2 class="mb-4">Experience</h2>
+                    </b-row>
+                    <ul class="p-0 timeline">
+                        <li :class="[index % 2 ? 'justify-content-end' : 'justify-content-start', 'row mb-5']" v-for="(job, index) in $t('jobs')">
+                            <b-col cols="9" md="5" order="2" :order-md="index % 2 ? 2 : 1">
+                                <p class="h5" v-html="job.title"></h4>
+                                <p v-html="job.period"></p>
+                                <p v-html="job.description"></p>
+                            </b-col>
+                            <b-col cols="3" md="2" order="1" :order-md="index % 2 ? 1 : 2">
+                                <b-img fluid class="rounded-circle w-100 shadow-custom" :src="job.company.logo" :alt="job.company.name"></b-img>
+                            </b-col>
+                        </li>
+                        <li class="row justify-content-md-center">
+                            <b-col cols="3" md="2">
+                                <div class="bg-red"></div>
+                                <b-img fluid class="rounded-circle w-100 shadow-custom bg-gradient-warning" src="images/yourlogo.svg" :alt="$t('nextJob')"></b-img>
+                            </b-col>
+                        </li>
+                    </ul>
+                </b-container>
+            </section>
+            <section id="item-4" class="py-5">
+                <b-container>
+                    <b-row>
+                        <h2 class="mb-4">Skills</h2>
+                    </b-row>
+                    <b-row>
+                        <b-col lg="4" class="mb-3" v-for="(skill, index) in $t('skills')">
+                            <b-card
+                                title-tag="h3"
+                                class="shadow-custom border-0 h-100"
+                                no-body>
+                                <b-card-body class="p-4">
+                                    <b-row>
+                                        <b-col>
+                                            <b-card-title class="h6 text-uppercase text-muted mb-0 small" v-html="skill.type"></b-card-title>
+                                            <span class="h5 font-weight-bold mb-0" v-html="skill.name"></span>
+                                        </b-col>
+                                        <b-col cols="auto">
+                                            <b-avatar :class="[skill.background, 'text-white']" :text="skill.logo"></b-avatar>
+                                        </b-col>
+                                    </b-row>
+                                    <p class="mt-3 mb-0 small">
+                                        <span class="text-success mr-2"><b-icon icon="arrow-up"></b-icon>{{skill.percentage}}</span>
+                                        <span class="text-nowrap text-muted" v-html="skill.level"></span>
+                                    </p>
+                                </b-card-body>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </section>
+        </main>
+        <b-modal ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="arts-adventure" :title="$t('projects[0].title')">
+            <p class="my-4">..</p>
+        </b-modal>
+    </div>
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-i18n.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-vue.min.js"></script>
+    <script src="js/bootstrap-vue-icons.min.js"></script>
+    <script>
+        const i18n = new VueI18n({
+            locale: 'en',
+            messages: {
+                "en": {
+                    "sections": [
+                        "About",
+                        "Portfolio",
+                        "Experience",
+                        "Education",
+                        "Skills",
+                        "Interests",
+                        "Awards"
+                    ],
+                    "about": "Fabian is a multimedia engineer committed to developing rich web applications that produce engaging user experiences. Possesses a unique blend of e-learning standards proficiency, game development experience and strong web accessibility acumen. With almost 10 years of experience in the e-learning industry, Fabian has gained extensive knowledge of various learning management systems, authoring tools, and third-party services.",
+                    "projects": [
+                        {
+                            "id": "arts-adventure",
+                            "thumbnail": "images/example-work01.jpg",
+                            "title": "Art's Adventure",
+                            "summary": "Large learning objectives were transformed into playable levels within the game narrative, and learners used leadership competencies to help them evaluate varying degrees of leadership.",
+                        },
+                        {
+                            "id": "bmi",
+                            "thumbnail": "images/example-work02.jpg",
+                            "title": "Business Model Innovation App",
+                            "summary": "Through a 3D subway-map style interface, learners could explore interactively the history of business innovation, gather ideas and share them with their colleagues.",
+                        },
+                        {
+                            "id": "velu",
+                            "thumbnail": "images/example-work03.jpg",
+                            "title": "Velu The Welder",
+                            "summary": "Developed as a technology demonstrator for the National Skills Development of India, this award-winning game was designed to expose players to basic skill sets aimed at getting acquainted with the craft of welding.",
+                        },
+                        {
+                            "id": "sales",
+                            "thumbnail": "images/example-work04.png", //Need to update
+                            "title": "Conversation Simulation",
+                            "summary": "A 2D-based simulation of a sales conversation for training purposes. Users' actions determine their paths in this animated branching scenario.",
+                        },
+                        {
+                            "id": "ignite",
+                            "thumbnail": "images/example-work05.png",
+                            "title": "Virtual Ignite",
+                            "summary": "Serious game used for onboarding of new associates. This 3D game features an authoring layer that allows dynamic creation of content and new levels in the game for instructional designers with no programming experience.",
+                        },
+                        {
+                            "id": "ar",
+                            "thumbnail": "images/example-work06.png",
+                            "title": "Augmented Reality",
+                            "summary": "Interactive visualization of 3D models of Hindu temples using tactile gestures and accelerometer information for Android mobile devices.",
+                        }
+                    ],
+                    "jobs": [
+                        {
+                            "company": {
+                                "logo": "images/swissvbs.png",
+                                "name": "SwissVBS"
+                            },
+                            "title": "Media Developer-3D Specialist",
+                            "period": "2008 - 2009",
+                            "description": "Create e-learning modules including visual renderings and animations in 3D using Autodesk Maya, Adobe Flash, Adobe Photoshop, audio-editing software and in-house tools."
+                        },
+                        {
+                            "company": {
+                                "logo": "images/tcs.jpeg",
+                                "name": "TATA Consultancy Services"
+                            },
+                            "title": "Game Designer and Developer",
+                            "period": "2010 - 2012",
+                            "description": "Responsible for project management, documentation, artwork, user experience, programming, usability testing and UI implementation of 3D applications and serious games that use augmented reality technologies along with motion and image recognition that can be deployed in stand-alone computer systems and mobile devices."
+                        },
+                        {
+                            "company": {
+                                "logo": "images/swissvbs.png",
+                                "name": "SwissVBS"
+                            },
+                            "title": "3D Game and Media Specialist",
+                            "period": "2012 - 2014",
+                            "description": "Design and implementation of 3D prototypes for educational campaigns using augmented reality, game mechanics and interactions in performance-based learning content."
+                        },
+                        {
+                            "company": {
+                                "logo": "images/swissvbs.png",
+                                "name": "SwissVBS"
+                            },
+                            "title": "Senior Application Developer",
+                            "period": "2014 - 2014",
+                            "description": "Conceptualization, documentation, implementation and maintenance of various user-centered solutions while ensuring that existing systems and applications become more effective and efficient."
+                        },
+                        {
+                            "company": {
+                                "logo": "images/swissvbs.png",
+                                "name": "SwissVBS"
+                            },
+                            "title": "Lead Software Developer",
+                            "period": "2015 - 2018",
+                            "description": "Custom HTML5 web application development for SCORM-compliant and third-party Learning Management Systems and services."
+                        },
+                        {
+                            "company": {
+                                "logo": "images/tam.png",
+                                "name": "TuesdayAfternoon Media,"
+                            },
+                            "title": "Senior Web Developer",
+                            "period": "2018 - present",
+                            "description": "Research of trends and development of technology and tools in the fields of web development and learning methodology in order to innovate and elevate the company's learning solutions."
+                        }
+                    ],
+                    "skills": [
+                        {
+                            "background": "bg-gradient-primary",
+                            "type": "Programming",
+                            "name": "C#",
+                            "logo": "C#",
+                            "percentage": "60%",
+                            "level": "Intermediate"
+                        },
+                        {
+                            "background": "bg-gradient-default",
+                            "type": "Programming",
+                            "name": "JavaScript",
+                            "logo": "JS",
+                            "percentage": "80%",
+                            "level": "Advanced"
+                        },
+                        {
+                            "background": "bg-gradient-success",
+                            "type": "Game Engine",
+                            "name": "Unity",
+                            "logo": "U",
+                            "percentage": "70%",
+                            "level": "Advanced"
+                        },
+                        {
+                            "background": "bg-gradient-danger",
+                            "type": "Platform",
+                            "name": "Google Firebase",
+                            "logo": "G",
+                            "percentage": "40%",
+                            "level": "Beginner"
+                        },
+                        {
+                            "background": "bg-gradient-success",
+                            "type": "Framework",
+                            "name": "Vue.js",
+                            "logo": "V",
+                            "percentage": "80%",
+                            "level": "Advanced"
+                        },
+                        {
+                            "background": "bg-gradient-warning",
+                            "type": "3D Software",
+                            "name": "Maya",
+                            "logo": "M",
+                            "percentage": "80%",
+                            "level": "Advanced"
+                        },
+                    ],
+                    "readMore": "Read more",
+                    "ok": "OK",
+                    "nextJob": "Your company here!"
+                }    
+            }
+        });
+        new Vue({
+            i18n,
+            data: {
+                text: 'Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam'
+            },
+            methods: {
+                test: function(){
+                }
+            },
+            mounted: function(){
+            }
+        }).$mount('#app');
+    </script>
+</body>
+</html>
