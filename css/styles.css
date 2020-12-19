@@ -101,8 +101,10 @@ p {
 .inset{
   position: relative;
   margin-top: -3rem;
-  left: -40%;
   width: 140%;
+}
+.inset.right{
+  left: -40%;
   z-index: -1;
 }
 .timeline {
