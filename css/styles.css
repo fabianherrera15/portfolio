@@ -48,6 +48,12 @@ p {
 .text-light {
   color: #ced4da!important
 }
+.bg-secondary {
+  background-color: #f7fafc!important;
+}
+.bg-default {
+  background-color: #172b4d!important;
+}
 .bg-gradient-primary {
   background: linear-gradient(87deg,#5e72e4 0,#825ee4 100%)!important
 }
@@ -106,6 +112,14 @@ p {
 .inset.right{
   left: -40%;
   z-index: -1;
+}
+.award-icon{
+  padding: 1.2rem;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -webkit-box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
+  box-shadow: 0 0 2rem 0 rgba(136,152,170,.15)!important;
 }
 .timeline {
   position: relative;

@@ -54,7 +54,9 @@
             <section id="item-0" class="py-5">
                 <b-container>
                     <b-row>
-                        <h2 class="mb-4">About</h2>
+                        <b-col>
+                            <h2 class="mb-4">About</h2>
+                        </b-col>
                     </b-row>
                     <b-row align-v="center" class="pt-lg-5">
                         <b-col lg="6">
@@ -74,7 +76,9 @@
             <section id="item-1" class="py-5">
                 <b-container>
                     <b-row>
-                        <h2 class="mb-4">Portfolio</h2>
+                        <b-col>
+                            <h2 class="mb-4">Portfolio</h2>
+                        </b-col>
                     </b-row>
                     <b-row>
                         <b-col lg="4" class="mb-3" v-for="(project, index) in $t('projects')">
@@ -101,7 +105,9 @@
             <section id="item-2" class="pt-5">
                 <b-container>
                     <b-row>
-                        <h2 class="mb-4">Experience</h2>
+                        <b-col>
+                            <h2 class="mb-4">Experience</h2>
+                        </b-col>
                     </b-row>
                     <ul class="p-0 timeline">
                         <li :class="[index % 2 ? 'justify-content-end' : 'justify-content-start', 'row mb-5']" v-for="(job, index) in $t('jobs')">
@@ -123,10 +129,24 @@
                     </ul>
                 </b-container>
             </section>
+            <b-container fluid class="px-0 bg-gradient-warning py-5 my-5">
+                <b-container>
+                    <b-row>
+                        <b-col md="6">
+                            <blockquote class="text-white mb-0">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <footer class="blockquote-footer text-light mb-0">Someone famous in <cite title="Source Title">SourceTitle</cite></footer>
+                            </blockquote>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </b-container>
             <section id="item-4" class="py-5">
                 <b-container>
                     <b-row>
-                        <h2 class="mb-4">Skills</h2>
+                        <b-col>
+                            <h2 class="mb-4">Skills</h2>
+                        </b-col>
                     </b-row>
                     <b-row>
                         <b-col lg="4" class="mb-3" v-for="(skill, index) in $t('skills')">
@@ -148,6 +168,94 @@
                                         <span class="text-success mr-2"><b-icon icon="arrow-up"></b-icon>{{skill.percentage}}</span>
                                         <span class="text-nowrap text-muted" v-html="skill.level"></span>
                                     </p>
+                                </b-card-body>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </section>
+            <section id="item-5" class="py-5">
+                <b-container>
+                    <b-row>
+                        <b-col>
+                            <h2 class="mb-4">Interests</h2>
+                        </b-col>
+                    </b-row>
+                    <b-row align-v="center" class="pt-lg-5">
+                        <b-col lg="6" class="d-none d-lg-block">
+                            <b-img src="images/DSC_1062.jpg" alt="" class="rounded-0 inset"></b-card-img>
+                        </b-col>
+                        <b-col lg="6">
+                            <b-card-img src="images/interests_m.jpg" alt="" class="rounded-0 d-block d-lg-none"></b-card-img>
+                            <b-card class="border-0 shadow-custom" no-body>
+                                <b-card-body class="p-4" title="">
+                                    <b-card-text v-html="$t('interests')"></b-card-text>
+                                </b-card-body>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </section>
+            <section id="item-6" class="py-5 bg-gradient-success">
+                <b-container>
+                    <b-row>
+                        <b-col>
+                            <h2 class="mb-4">Awards</h2>
+                        </b-col>
+                    </b-row>
+                    <b-row>
+                        <b-col lg="4" class="mb-3 pt-5" v-for="(award, index) in $t('awards')">
+                            <b-card
+                                title-tag="h3"
+                                class="border-0 h-100 bg-white shadow-custom"
+                                no-body>
+                                <b-row align-h="center">
+                                    <b-col cols="auto">
+                                        <div class="position-relative">
+                                            <b-icon :icon="award.icon" style="width: 4rem; height: 4rem;" :class="[award.background, 'text-white z-index-1 rounded-circle award-icon']"></b-icon>
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                                <b-card-header class="py-3 border-0 bg-transparent"></b-card-header>
+                                <b-card-body class="p-4">
+                                    <b-row>
+                                        <b-col>
+                                            <b-card-title class="h6 text-uppercase text-center text-muted mb-0 small" v-html="award.title"></b-card-title>
+                                        </b-col>
+                                    </b-row>
+                                    <p class="mt-3 mb-0" v-html="award.description"></p>
+                                </b-card-body>
+                            </b-card>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </section>
+            <section id="item-7" class="py-5 bg-default">
+                <b-container>
+                    <b-row>
+                        <b-col>
+                            <h2 class="mb-4 text-white">Contact</h2>
+                        </b-col>
+                    </b-row>
+                    <b-row align-h="center">
+                        <b-col md="7">
+                            <b-card
+                                title=""
+                                img-src="images/contact.jpg"
+                                img-alt=""
+                                img-top
+                                tag="article"
+                                class="shadow-custom border-0 h-100 bg-secondary"
+                                no-body>
+                                <b-card-body class="p-4">
+                                    <b-card-text v-html="$t('contact.body')"></b-card-text>
+                                    <b-form-group
+                                        id="fieldset-1"
+                                        description="Let us know your name."
+                                        label="Enter your name"
+                                        label-for="input-1">
+                                        <b-form-input id="input-1" v-model="form.name"></b-form-input>
+                                    </b-form-group>
                                 </b-card-body>
                             </b-card>
                         </b-col>
@@ -176,7 +284,8 @@
                         "Education",
                         "Skills",
                         "Interests",
-                        "Awards"
+                        "Awards",
+                        "Contact"
                     ],
                     "about": "Fabian is a multimedia engineer committed to developing rich web applications that produce engaging user experiences. Possesses a unique blend of e-learning standards proficiency, game development experience and strong web accessibility acumen. With almost 10 years of experience in the e-learning industry, Fabian has gained extensive knowledge of various learning management systems, authoring tools, and third-party services.",
                     "projects": [
@@ -323,6 +432,30 @@
                             "level": "Advanced"
                         },
                     ],
+                    "interests": "I am passionate about technology and immersive interactive experiences. I believe in the persuasive power of videogames and their ability to motivate players to complete tasks, learn, change their mindsets and work collectively to accomplish a goal in a playful way. I enjoy traveling, going to the movies and playing volleyball.",
+                    "awards": [
+                        {
+                            "background": "bg-gradient-primary",
+                            "title": "Buhler Holding AG Supplier Innovation Award",
+                            "icon": "star-fill",
+                            "description": "Given to SwissVBS for delivering state of the art didactic online learning tools (Business Model Innovation app)."
+                        },
+                        {
+                            "background": "bg-gradient-default",
+                            "title": "People’s Choice Award",
+                            "icon": "trophy-fill",
+                            "description": "Interactive game winner for 'Velu The Welder' of the 2011 International Science and Engineering Visualization Challenge, sponsored by the U.S. National Science Foundation (NSF)."
+                        },
+                        {
+                            "background": "bg-gradient-danger",
+                            "title": "Meritorious Bachelor Thesis",
+                            "icon": "award-fill",
+                            "description": "Award given for bachelor thesis titled ‘Design of a methodology for the development of 3D internet applications.’"
+                        }
+                    ],
+                    "contact": {
+                        "body": "I am always looking to meet new developers that share the same passion of creating games that go beyond entertainment. If you're looking to partner with a serious game developer on the forefront of emerging technologies... please get in touch with me.",
+                    },
                     "readMore": "Read more",
                     "ok": "OK",
                     "nextJob": "Your company here!"
@@ -332,6 +465,9 @@
         new Vue({
             i18n,
             data: {
+                form: {
+                    name: "",
+                },
                 text: 'Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam'
             },
             methods: {
