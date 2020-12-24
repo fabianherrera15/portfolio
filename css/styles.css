@@ -1123,7 +1123,10 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
   .timeline::before {
       left: 50%;
   }
-  .timeline > li:nth-child(odd) {
+  .timeline:not(.reversed) > li:nth-child(odd) {
+    text-align: right;
+  }
+  .timeline.reversed > li:nth-child(even) {
     text-align: right;
   }
 }

@@ -141,7 +141,7 @@
                     </b-row>
                 </b-container>
             </b-container>
-            <section id="item-4" class="py-5">
+            <section id="item-3" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -172,6 +172,27 @@
                             </b-card>
                         </b-col>
                     </b-row>
+                </b-container>
+            </section>
+            <section id="item-4" class="pt-5">
+                <b-container>
+                    <b-row>
+                        <b-col>
+                            <h2 class="mb-4">Education</h2>
+                        </b-col>
+                    </b-row>
+                    <ul class="p-0 timeline reversed">
+                        <li :class="[index % 2 ? 'justify-content-start' : 'justify-content-end', 'row mb-5']" v-for="(program, index) in $t('education')">
+                            <b-col cols="9" md="5" order="2" :order-md="index % 2 ? 1 : 2">
+                                <p class="h5" v-html="program.title"></h4>
+                                <p v-html="program.period"></p>
+                                <p v-html="program.description"></p>
+                            </b-col>
+                            <b-col cols="3" md="2" order="1" :order-md="index % 2 ? 2 : 1">
+                                <b-img fluid class="rounded-circle w-100 shadow-custom bg-white" :src="program.institution.logo" :alt="program.institution.name"></b-img>
+                            </b-col>
+                        </li>
+                    </ul>
                 </b-container>
             </section>
             <section id="item-5" class="py-5">
@@ -281,8 +302,8 @@
                         "About",
                         "Portfolio",
                         "Experience",
-                        "Education",
                         "Skills",
+                        "Education",
                         "Interests",
                         "Awards",
                         "Contact"
@@ -431,6 +452,53 @@
                             "percentage": "80%",
                             "level": "Advanced"
                         },
+                    ],
+                    "education": [
+                        {
+                            "institution": {
+                                "logo": "images/umng.jpg",
+                                "name": "Nueva Granada Military University"
+                            },
+                            "title": "Multimedia Engineering (Hons)",
+                            "period": "2004 - 2011",
+                            "description": "Interactive media, computer graphics, animation and simulation."
+                        },
+                        {
+                            "institution": {
+                                "logo": "images/georgebrown.jpg",
+                                "name": "George Brown College,"
+                            },
+                            "title": "Game Development",
+                            "period": "2015 - 2016",
+                            "description": "Computer programming, 2D and 3D graphics."
+                        },
+                        {
+                            "institution": {
+                                "logo": "images/brainstation.png",
+                                "name": "Brainstation,"
+                            },
+                            "title": "Product Management",
+                            "period": "2018",
+                            "description": "Assessing the market, developing a business case, customer and user validation, user personas, agile & lean and product design."
+                        },
+                        {
+                            "institution": {
+                                "logo": "images/brainstation.png",
+                                "name": "Brainstation,"
+                            },
+                            "title": "User Experience Design",
+                            "period": "2019",
+                            "description": "User research, information architecture, sketching and wireframing, and prototyping."
+                        },
+                        {
+                            "institution": {
+                                "logo": "images/ryerson.jpg",
+                                "name": "Ryerson University"
+                            },
+                            "title": "Web Accessibility Auditing",
+                            "period": "2020",
+                            "description": "Web accessibility guidelines and standards, types of audits, automated review tools, assistive technology testing, reporting and user testing."
+                        }
                     ],
                     "interests": "I am passionate about technology and immersive interactive experiences. I believe in the persuasive power of videogames and their ability to motivate players to complete tasks, learn, change their mindsets and work collectively to accomplish a goal in a playful way. I enjoy traveling, going to the movies and playing volleyball.",
                     "awards": [
