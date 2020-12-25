@@ -18,6 +18,12 @@ body {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   color: #32325d;
 }
+.brand-name{
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
 p {
   font-weight: 300;
   line-height: 1.7;
@@ -112,6 +118,47 @@ p {
 .inset.right{
   left: -40%;
   z-index: -1;
+}
+.separator {
+  top: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 150px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.separator,.separator svg {
+  position: absolute;
+  pointer-events: none
+}
+
+.separator-top {
+  top: 0;
+  bottom: auto
+}
+
+.separator-top svg {
+  top: 0
+}
+
+.separator-bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.separator-bottom svg {
+  bottom: 0
+}
+
+.separator-inverse {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.fill-default {
+  fill: #172b4d;
 }
 .award-icon{
   padding: 1.2rem;
@@ -1123,10 +1170,10 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
   .timeline::before {
       left: 50%;
   }
-  .timeline:not(.reversed) > li:nth-child(odd) {
+  .timeline:not(.inverse) > li:nth-child(odd) {
     text-align: right;
   }
-  .timeline.reversed > li:nth-child(even) {
+  .timeline.inverse > li:nth-child(even) {
     text-align: right;
   }
 }
