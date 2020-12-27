@@ -13,25 +13,25 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <b-navbar type="dark" sticky toggleable="lg" v-b-scrollspy="60" class="bg-default">
-            <b-container>
-                <b-navbar-brand href="#"><h1 class="brand-name text-white">Fabian <strong>Herrera</strong></h1></b-navbar-brand>
-                <b-collapse is-nav>
-                    <b-navbar-nav class="ml-auto">
-                        <b-nav-item class="text-white" :href="'#item-'+index" v-for="(section, index) in $t('sections')">{{section}}</b-nav-item>
-                    </b-navbar-nav>
-                </b-collapse>
-                <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3" v-b-toggle.sidebar>
-                    <b-icon font-scale="2" variant="light" icon="list"></b-icon>
-                </b-button>
-            </b-container>
+        <b-navbar type="dark" sticky toggleable="lg" v-b-scrollspy="55" class="bg-default">
+            <b-navbar-brand href="#"><h1 class="brand-name text-white">Fabian <strong>Herrera</strong></h1></b-navbar-brand>
+            <b-collapse is-nav>
+                <b-navbar-nav class="ml-auto">
+                    <b-nav-item class="text-white" :href="'#item-'+index" v-for="(section, index) in $t('sections')">{{section}}</b-nav-item>
+                </b-navbar-nav>
+            </b-collapse>
+            <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3" v-b-toggle.sidebar>
+                <b-icon font-scale="2" variant="light" icon="list"></b-icon>
+            </b-button>
         </b-navbar>
         <b-container fluid class="px-0 bg-default">
-            <b-row align-h="center">
-                <b-col cols="4" md="2">
-                    <b-img fluid class="rounded-circle p-4 w-100" src="images/avatar.jpg"></b-img>
-                </b-col>
-            </b-row>
+            <b-container>
+                <b-row align-h="center">
+                    <b-col cols="4" md="2">
+                        <b-img fluid class="rounded-circle p-4 w-100" src="images/avatar.jpg"></b-img>
+                    </b-col>
+                </b-row>
+            </b-container>
         </b-container>
         <b-sidebar id="sidebar" title="Sidebar" right shadow backdrop backdrop-variant="light">
             <div class="px-3 py-2">
@@ -264,35 +264,92 @@
                             <h2 class="mb-4 text-white">Contact</h2>
                         </b-col>
                     </b-row>
-                    <b-row align-h="center">
-                        <b-col md="7">
-                            <b-card
-                                title=""
-                                img-src="images/contact.jpg"
-                                img-alt=""
-                                img-top
-                                tag="article"
-                                class="shadow-custom border-0 h-100 bg-secondary"
-                                no-body>
-                                <b-card-body class="p-4">
-                                    <b-card-text v-html="$t('contact.body')"></b-card-text>
-                                    <b-form-group
-                                        id="fieldset-1"
-                                        description="Let us know your name."
-                                        label="Enter your name"
-                                        label-for="input-1">
-                                        <b-form-input id="input-1" v-model="form.name"></b-form-input>
-                                    </b-form-group>
-                                </b-card-body>
+                    <b-row>
+                        <b-col>
+                            <b-card no-body class="overflow-hidden shadow-custom border-0 bg-secondary">
+                                <b-row no-gutters>
+                                    <b-col lg="7">
+                                        <b-card-body class="p-4">
+                                            <b-card-text v-html="$t('contact.body')"></b-card-text>
+                                            <b-row>
+                                                <b-col lg="6">
+                                                    <b-form-group
+                                                        id="fieldset-1"
+                                                        label="Name"
+                                                        label-for="input-1">
+                                                        <b-form-input id="input-1" v-model="form.name"></b-form-input>
+                                                    </b-form-group>
+                                                </b-col>
+                                                <b-col lg="6">
+                                                    <b-form-group
+                                                        id="fieldset-2"
+                                                        type="email"
+                                                        label="Email"
+                                                        label-for="input-2">
+                                                        <b-form-input id="input-2" v-model="form.emai"></b-form-input>
+                                                    </b-form-group>
+                                                </b-col>
+                                            </b-row>
+                                            <!-- <b-form-group
+                                                id="fieldset-1"
+                                                label="Name"
+                                                label-for="input-1">
+                                                <b-form-input id="input-1" v-model="form.name"></b-form-input>
+                                            </b-form-group>
+                                            <b-form-group
+                                                id="fieldset-2"
+                                                type="email"
+                                                label="Email"
+                                                label-for="input-2">
+                                                <b-form-input id="input-2" v-model="form.emai"></b-form-input>
+                                            </b-form-group> -->
+                                            <b-form-group
+                                                id="fieldset-3"
+                                                label="Message"
+                                                label-for="input-3">
+                                                <b-form-textarea rows="3" max-rows="6" id="input-3" v-model="form.message"></b-form-input>
+                                            </b-form-group>
+                                            <b-button variant="success" v-text="$t('submit')"></b-button>
+                                        </b-card-body>
+                                      </b-col>
+                                    <b-col class="bg-contact">
+                                        <!-- <b-card-img class="rounded-0" src="images/contact.jpg" alt=""></b-card-img> -->
+                                    </b-col>
+                                </b-row>
                             </b-card>
                         </b-col>
                     </b-row>
                 </b-container>
             </section>
         </main>
-        <section>
-            <div class="st-footer-divider st-shuffle st-clr"><div style="background:#b36b24;width:11.111111111111%;"></div><div style="background:#85991f;width:11.111111111111%;"></div><div style="background:#ff7733;width:11.111111111111%;"></div><div style="background:#1F9947;width:11.111111111111%;"></div><div style="background:#e617a1;width:11.111111111111%;"></div><div style="background:#e64545;width:11.111111111111%;"></div><div style="background:#0f8299;width:11.111111111111%;"></div><div style="background:#7a52cc;width:11.111111111111%;"></div><div style="background:#4560e6;width:11.111111111111%;"></div></div>
-        </section>
+        <footer>
+            <b-container fluid class="px-0">
+                <b-row no-gutters>
+                    <b-col>
+                        <div class="bg-primary pt-1"></div>
+                    </b-col>
+                    <b-col>
+                        <div class="bg-info pt-1"></div>
+                    </b-col>
+                    <b-col>
+                        <div class="bg-danger pt-1"></div>
+                    </b-col>
+                    <b-col>
+                        <div class="bg-warning pt-1"></div>
+                    </b-col>
+                </b-row>
+                <b-container>
+                    <b-row>
+                        <b-col class="d-flex justify-content-between align-items-center">
+                            <span class="text-muted small" v-html="$t('copyright')"></span>
+                            <b-button :aria-label="$t('scrollTop')" variant="transparent" class="border-0 py-3 no-shadow mr-n3" @click="window.scrollTo({top: 0, behavior: 'smooth'});">
+                                <b-icon font-scale="1.5" icon="arrow-up-circle"></b-icon>
+                            </b-button>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </b-container>
+        </footer>
         <b-modal ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="arts-adventure" :title="$t('projects[0].title')">
             <p class="my-4">..</p>
         </b-modal>
@@ -535,7 +592,10 @@
                     },
                     "readMore": "Read more",
                     "ok": "OK",
-                    "nextJob": "Your company here!"
+                    "nextJob": "Your company here!",
+                    "submit": "Submit",
+                    "scrollTop": "Back to top",
+                    "copyright": "© 2020 fabianherrera.ca. All rights reserved."
                 }    
             }
         });
@@ -544,6 +604,8 @@
             data: {
                 form: {
                     name: "",
+                    email: "",
+                    message: ""
                 },
                 text: 'Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam'
             },
