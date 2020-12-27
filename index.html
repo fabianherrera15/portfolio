@@ -103,6 +103,18 @@
                     </b-row>
                 </b-container>
             </section>
+            <b-container fluid class="px-0 bg-gradient-danger py-5 my-5">
+                <b-container>
+                    <b-row>
+                        <b-col md="8">
+                            <blockquote class="text-white mb-0">
+                                <p v-html="$t('portfolioQuote.body')"></p>
+                                <footer class="blockquote-footer text-white mb-0">{{$t('portfolioQuote.author')}} <cite :title="$t('portfolioQuote.cite')" v-html="$t('portfolioQuote.cite')"></cite></footer>
+                            </blockquote>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </b-container>
             <section id="item-2" class="pt-5">
                 <b-container>
                     <b-row>
@@ -133,10 +145,10 @@
             <b-container fluid class="px-0 bg-gradient-warning py-5 my-5">
                 <b-container>
                     <b-row>
-                        <b-col md="6">
+                        <b-col md="8">
                             <blockquote class="text-white mb-0">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                <footer class="blockquote-footer text-light mb-0">Someone famous in <cite title="Source Title">SourceTitle</cite></footer>
+                                <p v-html="$t('experienceQuote.body')"></p>
+                                <footer class="blockquote-footer text-white mb-0">{{$t('experienceQuote.author')}} <cite :title="$t('experienceQuote.cite')" v-html="$t('experienceQuote.cite')"></cite></footer>
                             </blockquote>
                         </b-col>
                     </b-row>
@@ -196,6 +208,18 @@
                     </ul>
                 </b-container>
             </section>
+            <b-container fluid class="px-0 bg-gradient-info py-5 my-5">
+                <b-container>
+                    <b-row>
+                        <b-col md="8">
+                            <blockquote class="text-white mb-0">
+                                <p v-html="$t('educationQuote.body')"></p>
+                                <footer class="blockquote-footer text-white mb-0">{{$t('educationQuote.author')}} <cite :title="$t('educationQuote.cite')" v-html="$t('educationQuote.cite')"></cite></footer>
+                            </blockquote>
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </b-container>
             <section id="item-5" class="py-5">
                 <b-container>
                     <b-row>
@@ -312,9 +336,7 @@
                                             <b-button variant="success" v-text="$t('submit')"></b-button>
                                         </b-card-body>
                                       </b-col>
-                                    <b-col class="bg-contact">
-                                        <!-- <b-card-img class="rounded-0" src="images/contact.jpg" alt=""></b-card-img> -->
-                                    </b-col>
+                                    <b-col class="bg-contact"></b-col>
                                 </b-row>
                             </b-card>
                         </b-col>
@@ -413,6 +435,11 @@
                             "summary": "Interactive visualization of 3D models of Hindu temples using tactile gestures and accelerometer information for Android mobile devices.",
                         }
                     ],
+                    "portfolioQuote": {
+                        "body": "“...“",
+                        "author": "Scott Montgomery.",
+                        "cite": "Solution Consultant, Cornerstone OnDemand."
+                    },
                     "jobs": [
                         {
                             "company": {
@@ -469,6 +496,11 @@
                             "description": "Research of trends and development of technology and tools in the fields of web development and learning methodology in order to innovate and elevate the company's learning solutions."
                         }
                     ],
+                    "experienceQuote": {
+                        "body": "“Mr. Herrera served as a project leader in an innovative serious game that aspires to offer an introductory welding experience to almost 5 million Indians who will be trained to become skilled welders...“",
+                        "author": "Raman Srinivasan, PhD.",
+                        "cite": "Principal Consultant and Head Ignite, Tata Consultancy Services."
+                    },
                     "skills": [
                         {
                             "background": "bg-gradient-primary",
@@ -566,6 +598,11 @@
                             "description": "Web accessibility guidelines and standards, types of audits, automated review tools, assistive technology testing, reporting and user testing."
                         }
                     ],
+                    "educationQuote": {
+                        "body": "“I’ve had the chance to observe and assess his computer programming skills as well as his analytical, critical thinking and problem- solving abilities. Mr. Herrera Caicedo excelled in every area, particularly in the subjects of computer graphics and 3D applications.“",
+                        "author": "Eduard Sierra.",
+                        "cite": "Academic Director of Multimedia Engineering, Nueva Granada Military University."
+                    },
                     "interests": "I am passionate about technology and immersive interactive experiences. I believe in the persuasive power of videogames and their ability to motivate players to complete tasks, learn, change their mindsets and work collectively to accomplish a goal in a playful way. I enjoy traveling, going to the movies and playing volleyball.",
                     "awards": [
                         {
@@ -606,8 +643,7 @@
                     name: "",
                     email: "",
                     message: ""
-                },
-                text: 'Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt veniam velit elit elit veniam'
+                }
             },
             methods: {
                 test: function(){
