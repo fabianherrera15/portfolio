@@ -18,22 +18,25 @@ body {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   color: #32325d;
 }
+nav.navbar{
+  transition: all .15s ease;
+}
 .brand-name{
   font-weight: 300;
   font-size: 1rem;
 }
 .welcome-jumbotron{
   min-height: 600px; 
-  background-image: url("../img/profile-cover.jpg"); 
+  background-image: url("../img/profile_m.jpg"); 
   background-size: cover; 
-  background-position: center top;
+  background-position: right;
 }
 .welcome-jumbotron .position-absolute {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 .bg-contact{
   background-image: url("../img/contact.jpg");
@@ -1185,6 +1188,11 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 	-webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 3px rgba(245, 54, 92, .5);
 	box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 3px rgba(245, 54, 92, .5);
 	background: #f41e48
+}
+@media (min-width: 576px) {
+  .welcome-jumbotron{
+    background-image: url("../img/profile.jpg");
+  }
 }
 @media (min-width: 768px){
   .timeline::before {

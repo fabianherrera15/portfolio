@@ -13,13 +13,13 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <b-navbar type="dark" toggleable="lg" v-b-scrollspy fixed="top" class="bg-transparent py-0 py-lg-2">
+        <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 55}" fixed="top" :class="[atTopOfPage ? 'bg-transparent' : 'shadow bg-gradient-default']"  class="py-0 py-lg-2">
             <b-navbar-brand href="#">
                 <span class="brand-name text-white">Fabian <strong>Herrera</strong></span>
             </b-navbar-brand>
             <b-collapse is-nav>
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item class="text-white" :href="'#item-'+index" v-for="(section, index) in $t('sections')">{{section}}</b-nav-item>
+                    <b-nav-item class="text-white" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
             <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3 no-shadow" v-b-toggle.sidebar>
@@ -43,7 +43,7 @@
         <b-sidebar id="sidebar" title="Sidebar" right shadow backdrop backdrop-variant="light">
             <div class="px-3 py-2">
                 <b-nav v-b-scrollspy vertical>
-                    <b-nav-item :href="'#item-'+index" v-for="(section, index) in $t('sections')">{{section}}</b-nav-item>
+                    <b-nav-item :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
                 </b-nav>
             </div>
         </b-sidebar>
@@ -59,7 +59,7 @@
                     </b-col>
                 </b-row>
             </b-container> -->
-            <section id="item-0" class="py-5">
+            <section id="about" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -81,7 +81,7 @@
                     </b-row>
                 </b-container>
             </section>
-            <section id="item-1" class="py-5">
+            <section id="portfolio" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -122,7 +122,7 @@
                     </b-row>
                 </b-container>
             </b-container>
-            <section id="item-2" class="pt-5">
+            <section id="experience" class="pt-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -161,7 +161,7 @@
                     </b-row>
                 </b-container>
             </b-container>
-            <section id="item-3" class="py-5">
+            <section id="skills" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -194,7 +194,7 @@
                     </b-row>
                 </b-container>
             </section>
-            <section id="item-4" class="pt-5">
+            <section id="education" class="pt-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -227,7 +227,7 @@
                     </b-row>
                 </b-container>
             </b-container>
-            <section id="item-5" class="py-5">
+            <section id="interests" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -249,7 +249,7 @@
                     </b-row>
                 </b-container>
             </section>
-            <section id="item-6" class="py-5 bg-gradient-success position-relative">
+            <section id="awards" class="py-5 bg-gradient-success position-relative">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -288,7 +288,7 @@
                     </svg>
                 </div>
             </section>
-            <section id="item-7" class="py-5 bg-default">
+            <section id="contact" class="py-5 bg-default">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -396,18 +396,42 @@
             messages: {
                 "en": {
                     "sections": [
-                        "About",
-                        "Portfolio",
-                        "Experience",
-                        "Skills",
-                        "Education",
-                        "Interests",
-                        "Awards",
-                        "Contact"
+                        {
+                            "title": "About",
+                            "id": "about"
+                        },
+                        {
+                            "title": "Portfolio",
+                            "id": "portfolio"
+                        },
+                        {
+                            "title": "Experience",
+                            "id": "experience"
+                        },
+                        {
+                            "title": "Skills",
+                            "id": "skills"
+                        },
+                        {
+                            "title": "Education",
+                            "id": "education"
+                        },
+                        {
+                            "title": "Interests",
+                            "id": "interests"
+                        },
+                        {
+                            "title": "Awards",
+                            "id": "awards"
+                        },
+                        {
+                            "title": "Contact",
+                            "id": "contact"
+                        }
                     ],
                     "welcome": {
                         "greeting": "Hello",
-                        "message": "I’m a multidisciplinary developer based in Toronto, focused on Game, Web Development and Accessibility. Currently Senior Web Developer at TuesdayAfternoon Media Inc."
+                        "message": "I’m a multidisciplinary developer based in Toronto, focused on Game and Web Development as well as Accessibility. Currently Senior Web Developer at TuesdayAfternoon Media Inc."
                     },
                     "about": "Fabian is a multimedia engineer committed to developing rich web applications that produce engaging user experiences. Possesses a unique blend of e-learning standards proficiency, game development experience and strong web accessibility acumen. With almost 10 years of experience in the e-learning industry, Fabian has gained extensive knowledge of various learning management systems, authoring tools, and third-party services.",
                     "projects": [
@@ -640,7 +664,7 @@
                     "contact": {
                         "body": "I am always looking to meet new developers that share the same passion of creating games that go beyond entertainment. If you're looking to partner with a serious game developer on the forefront of emerging technologies... please get in touch with me.",
                     },
-                    "discoverMore": "Discover more",
+                    "discoverMore": "Read more",
                     "ok": "OK",
                     "nextJob": "Your company here!",
                     "submit": "Submit",
@@ -652,6 +676,7 @@
         new Vue({
             i18n,
             data: {
+                atTopOfPage: true,
                 form: {
                     name: "",
                     email: "",
@@ -659,8 +684,16 @@
                 }
             },
             methods: {
-                test: function(){
+                handleScroll: function(){
+                    if(window.pageYOffset>545){
+                        if(this.atTopOfPage) this.atTopOfPage = false;
+                    }else{
+                        if(!this.atTopOfPage) this.atTopOfPage = true;
+                    }
                 }
+            },
+            beforeMount () {
+                window.addEventListener('scroll', this.handleScroll);
             },
             mounted: function(){
             }
