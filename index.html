@@ -23,7 +23,7 @@
                 </b-navbar-nav>
             </b-collapse>
             <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3 no-shadow" v-b-toggle.sidebar>
-                <b-icon font-scale="2" variant="light" icon="list"></b-icon>
+                <b-icon class="text-white" font-scale="2" icon="list"></b-icon>
             </b-button>
         </b-navbar>
         <div class="position-relative pb-8 pt-5 pt-lg-8 d-flex align-items-center welcome-jumbotron">
@@ -34,18 +34,22 @@
                         <div class="col-md-10 col-lg-7">
                             <h1 class="display-2 text-white" v-html="$t('welcome.greeting')"></h1>
                             <p class="text-white mt-0 mb-5" v-html="$t('welcome.message')"></p>
-                            <b-button variant="primary" v-text="$t('discoverMore')"></b-button>
+                            <b-button @click="scrollToElement('about')" variant="primary" v-text="$t('discoverMore')"></b-button>
                         </div>
                     </div>
                 </b-container>
             </b-container>
         </div>
-        <b-sidebar id="sidebar" title="Sidebar" right shadow backdrop backdrop-variant="light">
-            <div class="px-3 py-2">
-                <b-nav v-b-scrollspy vertical>
-                    <b-nav-item v-b-toggle.sidebar @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
+        <b-sidebar id="sidebar" aria-labelledby="sidebar-title" right shadow backdrop no-header>
+            <template #default="{ hide }">
+                <div class="px-4 py-3 modal-header border-0">
+                    <h5 class="mb-0" id="sidebar-title" v-html="$t('menu')"></h4>
+                    <b-button variant="close" class="ml-auto close" aria-label="Close" @click="hide">×</b-button>
+                </div>
+                <b-nav v-b-scrollspy="{offset: 56}" vertical>
+                    <b-nav-item link-classes="text-muted py-3 px-4" v-b-toggle.sidebar @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
                 </b-nav>
-            </div>
+            </template>
         </b-sidebar>
         <main>
             <!-- <b-container class="bg-white">
@@ -665,6 +669,7 @@
                         "body": "I am always looking to meet new developers that share the same passion of creating games that go beyond entertainment. If you're looking to partner with a serious game developer on the forefront of emerging technologies... please get in touch with me.",
                     },
                     "discoverMore": "Read more",
+                    "menu": "Menu",
                     "ok": "OK",
                     "nextJob": "Your company here!",
                     "submit": "Submit",

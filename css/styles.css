@@ -38,6 +38,23 @@ nav.navbar{
   left: 0;
   opacity: 0.85;
 }
+#sidebar .nav-item{
+  position: relative;
+}
+#sidebar .nav-item .nav-link.active {
+  background: white;
+  color: #525f7f !important;
+}
+#sidebar .nav-item.active:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  border-left: 4px solid #5e72e4;
+  border-bottom: 0;
+}
 .bg-contact{
   background-image: url("../img/contact.jpg");
   background-size: cover;
