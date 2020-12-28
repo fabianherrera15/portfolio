@@ -19,7 +19,7 @@
             </b-navbar-brand>
             <b-collapse is-nav>
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item class="text-white" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
+                    <b-nav-item class="text-white" @click="scrollToElement($event, section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
             <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3 no-shadow" v-b-toggle.sidebar>
@@ -43,7 +43,7 @@
         <b-sidebar id="sidebar" title="Sidebar" right shadow backdrop backdrop-variant="light">
             <div class="px-3 py-2">
                 <b-nav v-b-scrollspy vertical>
-                    <b-nav-item :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
+                    <b-nav-item @click="scrollToElement($event, section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
                 </b-nav>
             </div>
         </b-sidebar>
@@ -386,7 +386,7 @@
     </div>
     <script src="js/vue.min.js"></script>
     <script src="js/vue-i18n.js"></script>
-    <script src="js/jquery-3.5.1.slim.min.js"></script> 
+    <script src="js/jquery-3.5.1.min.js"></script> 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap-vue.min.js"></script>
     <script src="js/bootstrap-vue-icons.min.js"></script>
@@ -685,10 +685,25 @@
             },
             methods: {
                 handleScroll: function(){
-                    if(window.pageYOffset>545){
+                    if(window.pageYOffset>544){
                         if(this.atTopOfPage) this.atTopOfPage = false;
                     }else{
                         if(!this.atTopOfPage) this.atTopOfPage = true;
+                    }
+                },
+                scrollToElement: function(event, id){
+                    event.preventDefault();
+                    if (hash !== "") {
+                        var hash = '#'+id;
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top - 48
+                        }, 800, function() {
+                            if (history.pushState) {
+                                history.pushState(null, null, hash); 
+                            } else {
+                                window.location.hash = hash;
+                            } 
+                        });   
                     }
                 }
             },
