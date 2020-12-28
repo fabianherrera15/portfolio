@@ -13,27 +13,33 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <b-container fluid class="px-0 bg-default py-3"></b-container>
-        <b-navbar type="dark" sticky toggleable="lg" v-b-scrollspy="55" class="bg-default py-0 py-lg-2">
-            <b-navbar-brand href="#"><h1 class="brand-name text-white">Fabian <strong>Herrera</strong></h1></b-navbar-brand>
+        <b-navbar type="dark" toggleable="lg" v-b-scrollspy fixed="top" class="bg-transparent py-0 py-lg-2">
+            <b-navbar-brand href="#">
+                <span class="brand-name text-white">Fabian <strong>Herrera</strong></span>
+            </b-navbar-brand>
             <b-collapse is-nav>
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item class="text-white" :href="'#item-'+index" v-for="(section, index) in $t('sections')">{{section}}</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
-            <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3" v-b-toggle.sidebar>
+            <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3 no-shadow" v-b-toggle.sidebar>
                 <b-icon font-scale="2" variant="light" icon="list"></b-icon>
             </b-button>
         </b-navbar>
-        <b-container fluid class="px-0 bg-default">
-            <b-container>
-                <b-row align-h="center">
-                    <b-col cols="4" md="2">
-                        <b-img fluid class="rounded-circle p-4 w-100" src="images/avatar.jpg"></b-img>
-                    </b-col>
-                </b-row>
+        <div class="position-relative pb-8 pt-5 pt-lg-8 d-flex align-items-center welcome-jumbotron">
+            <b-container fluid>
+                <span class="position-absolute bg-gradient-success"></span>
+                <b-container class="d-flex align-items-center">
+                    <div class="row">
+                        <div class="col-md-10 col-lg-7">
+                            <h1 class="display-2 text-white" v-html="$t('welcome.greeting')"></h1>
+                            <p class="text-white mt-0 mb-5" v-html="$t('welcome.message')"></p>
+                            <b-button variant="primary" v-text="$t('discoverMore')"></b-button>
+                        </div>
+                    </div>
+                </b-container>
             </b-container>
-        </b-container>
+        </div>
         <b-sidebar id="sidebar" title="Sidebar" right shadow backdrop backdrop-variant="light">
             <div class="px-3 py-2">
                 <b-nav v-b-scrollspy vertical>
@@ -62,7 +68,7 @@
                     </b-row>
                     <b-row align-v="center" class="pt-lg-5">
                         <b-col lg="6">
-                            <b-card-img src="images/DSC_1116.jpg" alt="" class="d-block d-lg-none"></b-card-img>
+                            <b-card-img src="img/about.jpg" alt="" class="d-block d-lg-none"></b-card-img>
                             <b-card class="border-0 shadow-custom" no-body>
                                 <b-card-body class="p-4" title="">
                                     <b-card-text v-html="$t('about')"></b-card-text>
@@ -70,7 +76,7 @@
                             </b-card>
                         </b-col>
                         <b-col lg="6" class="d-none d-lg-block">
-                            <b-img src="images/DSC_1116.jpg" alt="" class="rounded inset right"></b-card-img>
+                            <b-img src="img/about.jpg" alt="" class="rounded inset right"></b-card-img>
                         </b-col>
                     </b-row>
                 </b-container>
@@ -97,7 +103,7 @@
                                     <b-card-text v-html="project.summary"></b-card-text>
                                 </b-card-body>
                                 <b-card-footer class="bg-transparent p-4 pt-0 border-0">
-                                    <b-button v-b-modal="project.id" variant="primary" v-text="$t('readMore')"></b-button>
+                                    <b-button v-b-modal="project.id" variant="primary" v-text="$t('discoverMore')"></b-button>
                                 </b-card-footer>
                             </b-card>
                         </b-col>
@@ -137,7 +143,7 @@
                         <li class="row justify-content-md-center">
                             <b-col cols="3" md="2">
                                 <div class="bg-red"></div>
-                                <b-img fluid class="rounded-circle w-100 shadow-custom bg-gradient-warning" src="images/yourlogo.svg" :alt="$t('nextJob')"></b-img>
+                                <b-img fluid class="rounded-circle w-100 shadow-custom bg-gradient-warning" src="img/yourlogo.svg" :alt="$t('nextJob')"></b-img>
                             </b-col>
                         </li>
                     </ul>
@@ -230,10 +236,10 @@
                     </b-row>
                     <b-row align-v="center" class="pt-lg-5">
                         <b-col lg="6" class="d-none d-lg-block">
-                            <b-img src="images/DSC_1062.jpg" alt="" class="rounded inset"></b-card-img>
+                            <b-img src="img/interests.jpg" alt="" class="rounded inset"></b-card-img>
                         </b-col>
                         <b-col lg="6">
-                            <b-card-img src="images/interests_m.jpg" alt="" class="d-block d-lg-none"></b-card-img>
+                            <b-card-img src="img/interests_m.jpg" alt="" class="d-block d-lg-none"></b-card-img>
                             <b-card class="border-0 shadow-custom" no-body>
                                 <b-card-body class="p-4" title="">
                                     <b-card-text v-html="$t('interests')"></b-card-text>
@@ -259,7 +265,7 @@
                                 <b-row align-h="center">
                                     <b-col cols="auto">
                                         <div class="position-relative">
-                                            <b-icon :icon="award.icon" style="width: 4rem; height: 4rem;" :class="[award.background, 'text-white z-index-1 rounded-circle award-icon']"></b-icon>
+                                            <b-icon :icon="award.icon" :class="[award.background, 'text-white z-index-1 rounded-circle award-icon']"></b-icon>
                                         </div>
                                     </b-col>
                                 </b-row>
@@ -292,7 +298,7 @@
                     <b-row>
                         <b-col>
                             <b-card no-body class="overflow-hidden shadow-custom border-0 bg-secondary">
-                                <b-img fluid class="d-block d-lg-none w-100" src="images/contact_m.jpg"></b-img>
+                                <b-img fluid class="d-block d-lg-none w-100" src="img/contact_m.jpg"></b-img>
                                 <b-row no-gutters>
                                     <b-col lg="7">
                                         <b-card-body class="p-4">
@@ -399,41 +405,45 @@
                         "Awards",
                         "Contact"
                     ],
+                    "welcome": {
+                        "greeting": "Hello",
+                        "message": "I’m a multidisciplinary developer based in Toronto, focused on Game, Web Development and Accessibility. Currently Senior Web Developer at TuesdayAfternoon Media Inc."
+                    },
                     "about": "Fabian is a multimedia engineer committed to developing rich web applications that produce engaging user experiences. Possesses a unique blend of e-learning standards proficiency, game development experience and strong web accessibility acumen. With almost 10 years of experience in the e-learning industry, Fabian has gained extensive knowledge of various learning management systems, authoring tools, and third-party services.",
                     "projects": [
                         {
                             "id": "arts-adventure",
-                            "thumbnail": "images/example-work01.jpg",
+                            "thumbnail": "img/example-work01.jpg",
                             "title": "Art's Adventure",
                             "summary": "Large learning objectives were transformed into playable levels within the game narrative, and learners used leadership competencies to help them evaluate varying degrees of leadership.",
                         },
                         {
                             "id": "bmi",
-                            "thumbnail": "images/example-work02.jpg",
+                            "thumbnail": "img/example-work02.jpg",
                             "title": "Business Model Innovation App",
                             "summary": "Through a 3D subway-map style interface, learners could explore interactively the history of business innovation, gather ideas and share them with their colleagues.",
                         },
                         {
                             "id": "velu",
-                            "thumbnail": "images/example-work03.jpg",
+                            "thumbnail": "img/example-work03.jpg",
                             "title": "Velu The Welder",
                             "summary": "Developed as a technology demonstrator for the National Skills Development of India, this award-winning game was designed to expose players to basic skill sets aimed at getting acquainted with the craft of welding.",
                         },
                         {
                             "id": "sales",
-                            "thumbnail": "images/example-work04.png", //Need to update
+                            "thumbnail": "img/example-work04.png", //Need to update
                             "title": "Conversation Simulation",
                             "summary": "A 2D-based simulation of a sales conversation for training purposes. Users' actions determine their paths in this animated branching scenario.",
                         },
                         {
                             "id": "ignite",
-                            "thumbnail": "images/example-work05.png",
+                            "thumbnail": "img/example-work05.png",
                             "title": "Virtual Ignite",
                             "summary": "Serious game used for onboarding of new associates. This 3D game features an authoring layer that allows dynamic creation of content and new levels in the game for instructional designers with no programming experience.",
                         },
                         {
                             "id": "ar",
-                            "thumbnail": "images/example-work06.png",
+                            "thumbnail": "img/example-work06.png",
                             "title": "Augmented Reality",
                             "summary": "Interactive visualization of 3D models of Hindu temples using tactile gestures and accelerometer information for Android mobile devices.",
                         }
@@ -446,7 +456,7 @@
                     "jobs": [
                         {
                             "company": {
-                                "logo": "images/swissvbs.png",
+                                "logo": "img/swissvbs.png",
                                 "name": "SwissVBS"
                             },
                             "title": "Media Developer-3D Specialist",
@@ -455,7 +465,7 @@
                         },
                         {
                             "company": {
-                                "logo": "images/tcs.jpeg",
+                                "logo": "img/tcs.jpeg",
                                 "name": "TATA Consultancy Services"
                             },
                             "title": "Game Designer and Developer",
@@ -464,7 +474,7 @@
                         },
                         {
                             "company": {
-                                "logo": "images/swissvbs.png",
+                                "logo": "img/swissvbs.png",
                                 "name": "SwissVBS"
                             },
                             "title": "3D Game and Media Specialist",
@@ -473,7 +483,7 @@
                         },
                         {
                             "company": {
-                                "logo": "images/swissvbs.png",
+                                "logo": "img/swissvbs.png",
                                 "name": "SwissVBS"
                             },
                             "title": "Senior Application Developer",
@@ -482,7 +492,7 @@
                         },
                         {
                             "company": {
-                                "logo": "images/swissvbs.png",
+                                "logo": "img/swissvbs.png",
                                 "name": "SwissVBS"
                             },
                             "title": "Lead Software Developer",
@@ -491,7 +501,7 @@
                         },
                         {
                             "company": {
-                                "logo": "images/tam.png",
+                                "logo": "img/tam.png",
                                 "name": "TuesdayAfternoon Media,"
                             },
                             "title": "Senior Web Developer",
@@ -538,7 +548,7 @@
                             "level": "Beginner"
                         },
                         {
-                            "background": "bg-gradient-success",
+                            "background": "bg-gradient-info",
                             "type": "Framework",
                             "name": "Vue.js",
                             "logo": "V",
@@ -557,7 +567,7 @@
                     "education": [
                         {
                             "institution": {
-                                "logo": "images/umng.jpg",
+                                "logo": "img/umng.jpg",
                                 "name": "Nueva Granada Military University"
                             },
                             "title": "Multimedia Engineering (Hons)",
@@ -566,7 +576,7 @@
                         },
                         {
                             "institution": {
-                                "logo": "images/georgebrown.jpg",
+                                "logo": "img/georgebrown.jpg",
                                 "name": "George Brown College,"
                             },
                             "title": "Game Development",
@@ -575,7 +585,7 @@
                         },
                         {
                             "institution": {
-                                "logo": "images/brainstation.png",
+                                "logo": "img/brainstation.png",
                                 "name": "Brainstation,"
                             },
                             "title": "Product Management",
@@ -584,7 +594,7 @@
                         },
                         {
                             "institution": {
-                                "logo": "images/brainstation.png",
+                                "logo": "img/brainstation.png",
                                 "name": "Brainstation,"
                             },
                             "title": "User Experience Design",
@@ -593,7 +603,7 @@
                         },
                         {
                             "institution": {
-                                "logo": "images/ryerson.jpg",
+                                "logo": "img/ryerson.jpg",
                                 "name": "Ryerson University"
                             },
                             "title": "Web Accessibility Auditing",
@@ -630,7 +640,7 @@
                     "contact": {
                         "body": "I am always looking to meet new developers that share the same passion of creating games that go beyond entertainment. If you're looking to partner with a serious game developer on the forefront of emerging technologies... please get in touch with me.",
                     },
-                    "readMore": "Read more",
+                    "discoverMore": "Discover more",
                     "ok": "OK",
                     "nextJob": "Your company here!",
                     "submit": "Submit",
