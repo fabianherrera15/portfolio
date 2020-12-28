@@ -44,7 +44,7 @@
             <template #default="{ hide }">
                 <div class="px-4 py-3 modal-header border-0">
                     <h5 class="mb-0" id="sidebar-title" v-html="$t('menu')"></h4>
-                    <b-button variant="close" class="ml-auto close" aria-label="Close" @click="hide">×</b-button>
+                    <button variant="" class="ml-auto close" aria-label="Close" @click="hide">×</button>
                 </div>
                 <b-nav v-b-scrollspy="{offset: 56}" vertical>
                     <b-nav-item link-classes="text-muted py-3 px-4" v-b-toggle.sidebar @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
