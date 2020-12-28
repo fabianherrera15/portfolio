@@ -13,7 +13,8 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <b-navbar type="dark" sticky toggleable="lg" v-b-scrollspy="55" class="bg-default">
+        <b-container fluid class="px-0 bg-default py-3"></b-container>
+        <b-navbar type="dark" sticky toggleable="lg" v-b-scrollspy="55" class="bg-default py-0 py-lg-2">
             <b-navbar-brand href="#"><h1 class="brand-name text-white">Fabian <strong>Herrera</strong></h1></b-navbar-brand>
             <b-collapse is-nav>
                 <b-navbar-nav class="ml-auto">
@@ -61,7 +62,7 @@
                     </b-row>
                     <b-row align-v="center" class="pt-lg-5">
                         <b-col lg="6">
-                            <b-card-img src="images/DSC_1116.jpg" alt="" class="rounded-0 d-block d-lg-none"></b-card-img>
+                            <b-card-img src="images/DSC_1116.jpg" alt="" class="d-block d-lg-none"></b-card-img>
                             <b-card class="border-0 shadow-custom" no-body>
                                 <b-card-body class="p-4" title="">
                                     <b-card-text v-html="$t('about')"></b-card-text>
@@ -69,7 +70,7 @@
                             </b-card>
                         </b-col>
                         <b-col lg="6" class="d-none d-lg-block">
-                            <b-img src="images/DSC_1116.jpg" alt="" class="rounded-0 inset right"></b-card-img>
+                            <b-img src="images/DSC_1116.jpg" alt="" class="rounded inset right"></b-card-img>
                         </b-col>
                     </b-row>
                 </b-container>
@@ -229,10 +230,10 @@
                     </b-row>
                     <b-row align-v="center" class="pt-lg-5">
                         <b-col lg="6" class="d-none d-lg-block">
-                            <b-img src="images/DSC_1062.jpg" alt="" class="rounded-0 inset"></b-card-img>
+                            <b-img src="images/DSC_1062.jpg" alt="" class="rounded inset"></b-card-img>
                         </b-col>
                         <b-col lg="6">
-                            <b-card-img src="images/interests_m.jpg" alt="" class="rounded-0 d-block d-lg-none"></b-card-img>
+                            <b-card-img src="images/interests_m.jpg" alt="" class="d-block d-lg-none"></b-card-img>
                             <b-card class="border-0 shadow-custom" no-body>
                                 <b-card-body class="p-4" title="">
                                     <b-card-text v-html="$t('interests')"></b-card-text>
@@ -291,6 +292,7 @@
                     <b-row>
                         <b-col>
                             <b-card no-body class="overflow-hidden shadow-custom border-0 bg-secondary">
+                                <b-img fluid class="d-block d-lg-none w-100" src="images/contact_m.jpg"></b-img>
                                 <b-row no-gutters>
                                     <b-col lg="7">
                                         <b-card-body class="p-4">
@@ -364,8 +366,8 @@
                     <b-row>
                         <b-col class="d-flex justify-content-between align-items-center">
                             <span class="text-muted small" v-html="$t('copyright')"></span>
-                            <b-button :aria-label="$t('scrollTop')" variant="transparent" class="border-0 py-3 no-shadow mr-n3" @click="window.scrollTo({top: 0, behavior: 'smooth'});">
-                                <b-icon font-scale="1.5" icon="arrow-up-circle"></b-icon>
+                            <b-button :aria-label="$t('scrollTop')" variant="transparent" class="p-0 my-2 no-shadow" @click="window.scrollTo({top: 0, behavior: 'smooth'});">
+                                <b-icon font-scale="2" icon="arrow-up-circle"></b-icon>
                             </b-button>
                         </b-col>
                     </b-row>
@@ -378,7 +380,8 @@
     </div>
     <script src="js/vue.min.js"></script>
     <script src="js/vue-i18n.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.5.1.slim.min.js"></script> 
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap-vue.min.js"></script>
     <script src="js/bootstrap-vue-icons.min.js"></script>
     <script>
