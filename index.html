@@ -13,13 +13,13 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 55}" fixed="top" :class="[atTopOfPage ? 'bg-transparent' : 'shadow bg-gradient-default']"  class="py-0 py-lg-2">
+        <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 56}" fixed="top" :class="[atTopOfPage ? 'bg-transparent' : 'shadow bg-gradient-default']"  class="py-0 py-lg-2">
             <b-navbar-brand href="#">
                 <span class="brand-name text-white">Fabian <strong>Herrera</strong></span>
             </b-navbar-brand>
             <b-collapse is-nav>
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item class="text-white" @click="scrollToElement($event, section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
+                    <b-nav-item class="text-white" @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
             <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3 no-shadow" v-b-toggle.sidebar>
@@ -43,7 +43,7 @@
         <b-sidebar id="sidebar" title="Sidebar" right shadow backdrop backdrop-variant="light">
             <div class="px-3 py-2">
                 <b-nav v-b-scrollspy vertical>
-                    <b-nav-item @click="scrollToElement($event, section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
+                    <b-nav-item v-b-toggle.sidebar @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
                 </b-nav>
             </div>
         </b-sidebar>
@@ -691,8 +691,7 @@
                         if(!this.atTopOfPage) this.atTopOfPage = true;
                     }
                 },
-                scrollToElement: function(event, id){
-                    event.preventDefault();
+                scrollToElement: function(id){
                     if (hash !== "") {
                         var hash = '#'+id;
                         $('html, body').animate({
