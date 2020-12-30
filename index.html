@@ -146,7 +146,6 @@
                         </li>
                         <li class="row justify-content-md-center">
                             <b-col cols="3" md="2">
-                                <div class="bg-red"></div>
                                 <b-img fluid class="rounded-circle w-100 shadow-custom bg-gradient-warning" src="img/yourlogo.svg" :alt="$t('nextJob')"></b-img>
                             </b-col>
                         </li>
@@ -286,11 +285,11 @@
                         </b-col>
                     </b-row>
                 </b-container>
-                <div class="separator separator-bottom">
+                <!-- <div class="separator separator-bottom">
                     <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <polygon points="2560 0 2560 100 0 100" class="fill-default"></polygon>
                     </svg>
-                </div>
+                </div> -->
             </section>
             <section id="contact" class="py-5 bg-default">
                 <b-container>
@@ -384,8 +383,25 @@
                 </b-container>
             </b-container>
         </footer>
-        <b-modal ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="arts-adventure" :title="$t('projects[0].title')">
-            <p class="my-4">..</p>
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="arts-adventure" :title="$t('projects[0].title')">
+            <b-container>
+                <b-row>
+                    <b-col lg="6">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-01.png"></b-img>
+                    </b-col>
+                    <b-col lg="6">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col lg="6" order="2" order-lg="1">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                    <b-col lg="6" order="1" order-lg="2">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-02.png"></b-img>
+                    </b-col>
+                </b-row>
+            </b-container>
         </b-modal>
     </div>
     <script src="js/vue.min.js"></script>
@@ -435,7 +451,7 @@
                     ],
                     "welcome": {
                         "greeting": "Hello",
-                        "message": "I’m a multidisciplinary developer based in Toronto, focused on Game and Web Development as well as Accessibility. Currently Senior Web Developer at TuesdayAfternoon Media Inc."
+                        "message": "I’m a multidisciplinary developer based in Toronto, focused on <strong>Game and Web Development</strong> as well as <strong>Accessibility</strong>. Currently Senior Web Developer at TuesdayAfternoon Media Inc."
                     },
                     "about": "Fabian is a multimedia engineer committed to developing rich web applications that produce engaging user experiences. Possesses a unique blend of e-learning standards proficiency, game development experience and strong web accessibility acumen. With almost 10 years of experience in the e-learning industry, Fabian has gained extensive knowledge of various learning management systems, authoring tools, and third-party services.",
                     "projects": [
@@ -476,6 +492,9 @@
                             "summary": "Interactive visualization of 3D models of Hindu temples using tactile gestures and accelerometer information for Android mobile devices.",
                         }
                     ],
+                    "arts-adventure": {
+                        "body1": "Large learning objectives were transformed into playable levels within the game narrative, and learners used leadership competencies to help them evaluate varying degrees of leadership."
+                    },
                     "portfolioQuote": {
                         "body": "“...“",
                         "author": "Scott Montgomery.",
