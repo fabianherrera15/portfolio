@@ -306,45 +306,48 @@
                                     <b-col lg="7">
                                         <b-card-body class="p-4">
                                             <b-card-text v-html="$t('contact.body')"></b-card-text>
-                                            <b-row>
-                                                <b-col lg="6">
-                                                    <b-form-group
-                                                        id="fieldset-1"
-                                                        label="Name"
-                                                        label-for="input-1">
-                                                        <b-form-input id="input-1" v-model="form.name"></b-form-input>
-                                                    </b-form-group>
-                                                </b-col>
-                                                <b-col lg="6">
-                                                    <b-form-group
-                                                        id="fieldset-2"
-                                                        type="email"
-                                                        label="Email"
-                                                        label-for="input-2">
-                                                        <b-form-input id="input-2" v-model="form.emai"></b-form-input>
-                                                    </b-form-group>
-                                                </b-col>
-                                            </b-row>
-                                            <!-- <b-form-group
-                                                id="fieldset-1"
-                                                label="Name"
-                                                label-for="input-1">
-                                                <b-form-input id="input-1" v-model="form.name"></b-form-input>
-                                            </b-form-group>
-                                            <b-form-group
-                                                id="fieldset-2"
-                                                type="email"
-                                                label="Email"
-                                                label-for="input-2">
-                                                <b-form-input id="input-2" v-model="form.emai"></b-form-input>
-                                            </b-form-group> -->
-                                            <b-form-group
-                                                id="fieldset-3"
-                                                label="Message"
-                                                label-for="input-3">
-                                                <b-form-textarea rows="3" max-rows="6" id="input-3" v-model="form.message"></b-form-input>
-                                            </b-form-group>
-                                            <b-button variant="success" v-text="$t('submit')"></b-button>
+                                            <b-form>
+                                                <b-row>
+                                                    <b-col lg="6">
+                                                        <b-form-group
+                                                            id="fieldset-1"
+                                                            label="Name"
+                                                            label-for="input-1">
+                                                            <b-form-input id="input-1" v-model="form.name"></b-form-input>
+                                                        </b-form-group>
+                                                    </b-col>
+                                                    <b-col lg="6">
+                                                        <b-form-group
+                                                            id="fieldset-2"
+                                                            type="email"
+                                                            label="Email"
+                                                            label-for="input-2">
+                                                            <b-form-input id="input-2" v-model="form.emai"></b-form-input>
+                                                        </b-form-group>
+                                                    </b-col>
+                                                </b-row>
+                                                <!-- <b-form-group
+                                                    id="fieldset-1"
+                                                    label="Name"
+                                                    label-for="input-1">
+                                                    <b-form-input id="input-1" v-model="form.name"></b-form-input>
+                                                </b-form-group>
+                                                <b-form-group
+                                                    id="fieldset-2"
+                                                    type="email"
+                                                    label="Email"
+                                                    label-for="input-2">
+                                                    <b-form-input id="input-2" v-model="form.emai"></b-form-input>
+                                                </b-form-group> -->
+                                                <b-form-group
+                                                    id="fieldset-3"
+                                                    label="Message"
+                                                    label-for="input-3">
+                                                    <b-form-textarea rows="3" max-rows="6" id="input-3" v-model="form.message"></b-form-input>
+                                                </b-form-group>
+                                                <b-button variant="success" v-text="$t('submit')"></b-button>
+                                                <!-- <b-button class="g-recaptcha" data-sitekey="6Lcg3RsaAAAAALCnJ1iJFplC0cQVfS3itC5z2LT-" data-callback='onSubmit' data-action='submit' variant="success" v-text="$t('submit')"></b-button> -->
+                                            </b-form>
                                         </b-card-body>
                                       </b-col>
                                     <b-col class="bg-contact"></b-col>
@@ -403,6 +406,96 @@
                 </b-row>
             </b-container>
         </b-modal>
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="bmi" :title="$t('projects[1].title')">
+            <b-container>
+                <b-row>
+                    <b-col lg="6">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-01.png"></b-img>
+                    </b-col>
+                    <b-col lg="6">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col lg="6" order="2" order-lg="1">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                    <b-col lg="6" order="1" order-lg="2">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-02.png"></b-img>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-modal>
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="velu" :title="$t('projects[2].title')">
+            <b-container>
+                <b-row>
+                    <b-col lg="6">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-01.jpg"></b-img>
+                    </b-col>
+                    <b-col lg="6">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col lg="6" order="2" order-lg="1">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                    <b-col lg="6" order="1" order-lg="2">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-02.jpg"></b-img>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-modal>
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="sales" :title="$t('projects[3].title')">
+            <b-container>
+                <b-row>
+                    <b-col lg="6">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-01.png"></b-img>
+                    </b-col>
+                    <b-col lg="6">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col lg="6" order="2" order-lg="1">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                    <b-col lg="6" order="1" order-lg="2">
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-02.png"></b-img>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-modal>
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="ar" :title="$t('projects[5].title')">
+            <b-container>
+                <b-row>
+                    <b-col lg="6">
+                        <model-viewer src="img/temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
+                    </b-col>
+                    <b-col lg="6">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col lg="6" order="2" order-lg="1">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                    <b-col lg="6" order="1" order-lg="2">
+                        <model-viewer src="img/elephant.glb" alt="A 3D model of an elephant" auto-rotate camera-controls></model-viewer>
+                    </b-col>
+                </b-row>
+                <b-row>
+                    <b-col lg="6">
+                        <b-embed type="video" aspect="16by9" controls>
+                            <source src="img/example-work06-03.mp4" type="video/mp4">
+                        </b-embed>
+                    </b-col>
+                    <b-col lg="6">
+                        <p v-html="$t('arts-adventure.body1')"></p>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-modal>
     </div>
     <script src="js/vue.min.js"></script>
     <script src="js/vue-i18n.js"></script>
@@ -410,6 +503,9 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap-vue.min.js"></script>
     <script src="js/bootstrap-vue-icons.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         const i18n = new VueI18n({
             locale: 'en',
@@ -475,7 +571,7 @@
                         },
                         {
                             "id": "sales",
-                            "thumbnail": "img/example-work04.png", //Need to update
+                            "thumbnail": "img/example-work04.png",
                             "title": "Conversation Simulation",
                             "summary": "A 2D-based simulation of a sales conversation for training purposes. Users' actions determine their paths in this animated branching scenario.",
                         },
@@ -728,6 +824,9 @@
                             } 
                         });   
                     }
+                },
+                onSubmit: function(token){
+                    document.getElementById("contact-form").submit();
                 }
             },
             beforeMount () {
