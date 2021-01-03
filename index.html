@@ -386,112 +386,180 @@
                 </b-container>
             </b-container>
         </footer>
-        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="arts-adventure" :title="$t('projects[0].title')">
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="arts-adventure" :title="$t('projects[0].title')">
             <b-container>
                 <b-row>
-                    <b-col lg="6">
+                    <b-col lg="5" class="position-relative">
+                        <div class="sticky-top pt-md-4 pb-4">
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-danger text-white p-2" icon="person"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('client')"></span><span class="p" v-text="$t('arts-adventure.client')"></span>
+                            </b-media>
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-success text-white p-2" icon="lightning"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('projectSkills')"></span><span class="p" v-html="$t('arts-adventure.skills')"></span>
+                            </b-media>
+                            <b-media>
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-primary text-white p-2" icon="calendar"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('completedOn')"></span><span class="p" v-html="$t('arts-adventure.completedOn')"></span>
+                            </b-media>
+                        </div>
+                    </b-col>
+                    <b-col lg="7">
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-01.png"></b-img>
-                    </b-col>
-                    <b-col lg="6">
                         <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                </b-row>
-                <b-row>
-                    <b-col lg="6" order="2" order-lg="1">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                    <b-col lg="6" order="1" order-lg="2">
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-02.png"></b-img>
+                        <p v-html="$t('arts-adventure.body2')"></p>
                     </b-col>
                 </b-row>
             </b-container>
         </b-modal>
-        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="bmi" :title="$t('projects[1].title')">
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="bmi" :title="$t('projects[1].title')">
             <b-container>
                 <b-row>
-                    <b-col lg="6">
+                    <b-col lg="5" class="position-relative">
+                        <div class="sticky-top pt-md-4 pb-4">
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-danger text-white p-2" icon="person"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('client')"></span><span class="p" v-text="$t('bmi.client')"></span>
+                            </b-media>
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-success text-white p-2" icon="lightning"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('projectSkills')"></span><span class="p" v-html="$t('bmi.skills')"></span>
+                            </b-media>
+                            <b-media>
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-primary text-white p-2" icon="calendar"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('completedOn')"></span><span class="p" v-html="$t('bmi.completedOn')"></span>
+                            </b-media>
+                        </div>
+                    </b-col>
+                    <b-col lg="7">
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-01.png"></b-img>
-                    </b-col>
-                    <b-col lg="6">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                </b-row>
-                <b-row>
-                    <b-col lg="6" order="2" order-lg="1">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                    <b-col lg="6" order="1" order-lg="2">
+                        <p v-html="$t('bmi.body1')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-02.png"></b-img>
+                        <p v-html="$t('bmi.body2')"></p>
                     </b-col>
                 </b-row>
             </b-container>
         </b-modal>
-        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="velu" :title="$t('projects[2].title')">
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="velu" :title="$t('projects[2].title')">
             <b-container>
                 <b-row>
-                    <b-col lg="6">
+                    <b-col lg="5" class="position-relative">
+                        <div class="sticky-top pt-md-4 pb-4">
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-danger text-white p-2" icon="person"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('client')"></span><span class="p" v-text="$t('velu.client')"></span>
+                            </b-media>
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-success text-white p-2" icon="lightning"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('projectSkills')"></span><span class="p" v-html="$t('velu.skills')"></span>
+                            </b-media>
+                            <b-media>
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-primary text-white p-2" icon="calendar"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('completedOn')"></span><span class="p" v-html="$t('velu.completedOn')"></span>
+                            </b-media>
+                        </div>
+                    </b-col>
+                    <b-col lg="7">
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-01.jpg"></b-img>
-                    </b-col>
-                    <b-col lg="6">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                </b-row>
-                <b-row>
-                    <b-col lg="6" order="2" order-lg="1">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                    <b-col lg="6" order="1" order-lg="2">
+                        <p v-html="$t('velu.body1')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-02.jpg"></b-img>
+                        <p v-html="$t('velu.body2')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-03.jpg"></b-img>
+                        <p v-html="$t('velu.body3')"></p>
                     </b-col>
                 </b-row>
             </b-container>
         </b-modal>
-        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="sales" :title="$t('projects[3].title')">
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="sales" :title="$t('projects[3].title')">
             <b-container>
                 <b-row>
-                    <b-col lg="6">
+                    <b-col lg="5" class="position-relative">
+                        <div class="sticky-top pt-md-4 pb-4">
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-danger text-white p-2" icon="person"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('client')"></span><span class="p" v-text="$t('sales.client')"></span>
+                            </b-media>
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-success text-white p-2" icon="lightning"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('projectSkills')"></span><span class="p" v-html="$t('sales.skills')"></span>
+                            </b-media>
+                            <b-media>
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-primary text-white p-2" icon="calendar"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('completedOn')"></span><span class="p" v-html="$t('sales.completedOn')"></span>
+                            </b-media>
+                        </div>
+                    </b-col>
+                    <b-col lg="7">
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-01.png"></b-img>
-                    </b-col>
-                    <b-col lg="6">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                </b-row>
-                <b-row>
-                    <b-col lg="6" order="2" order-lg="1">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                    <b-col lg="6" order="1" order-lg="2">
+                        <p v-html="$t('sales.body1')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-02.png"></b-img>
+                        <p v-html="$t('sales.body2')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-03.png"></b-img>
+                        <p v-html="$t('sales.body3')"></p>
                     </b-col>
                 </b-row>
             </b-container>
         </b-modal>
-        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-0" id="ar" :title="$t('projects[5].title')">
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="ar" :title="$t('projects[5].title')">
             <b-container>
                 <b-row>
-                    <b-col lg="6">
-                        <model-viewer src="img/temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
+                    <b-col lg="5" class="position-relative">
+                        <div class="sticky-top pt-md-4 pb-4">
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-danger text-white p-2" icon="person"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('client')"></span><span class="p" v-text="$t('ar.client')"></span>
+                            </b-media>
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-success text-white p-2" icon="lightning"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('projectSkills')"></span><span class="p" v-html="$t('ar.skills')"></span>
+                            </b-media>
+                            <b-media>
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-primary text-white p-2" icon="calendar"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('completedOn')"></span><span class="p" v-html="$t('ar.completedOn')"></span>
+                            </b-media>
+                        </div>
                     </b-col>
-                    <b-col lg="6">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                </b-row>
-                <b-row>
-                    <b-col lg="6" order="2" order-lg="1">
-                        <p v-html="$t('arts-adventure.body1')"></p>
-                    </b-col>
-                    <b-col lg="6" order="1" order-lg="2">
-                        <model-viewer src="img/elephant.glb" alt="A 3D model of an elephant" auto-rotate camera-controls></model-viewer>
-                    </b-col>
-                </b-row>
-                <b-row>
-                    <b-col lg="6">
-                        <b-embed type="video" aspect="16by9" controls>
+                    <b-col lg="7">
+                        <model-viewer style="min-height: 200px;" class="w-100 mb-3" src="img/temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
+                        <p v-html="$t('ar.body1')"></p>
+                        <model-viewer style="min-height: 200px;" class="w-100 mb-3" src="img/elephant.glb" alt="A 3D model of an elephant" auto-rotate camera-controls></model-viewer>
+                        <p v-html="$t('ar.body2')"></p>
+                        <b-embed class="mb-3" type="video" aspect="16by9" controls>
                             <source src="img/example-work06-03.mp4" type="video/mp4">
                         </b-embed>
-                    </b-col>
-                    <b-col lg="6">
-                        <p v-html="$t('arts-adventure.body1')"></p>
+                        <p v-html="$t('ar.body3')"></p>
                     </b-col>
                 </b-row>
             </b-container>
@@ -589,7 +657,45 @@
                         }
                     ],
                     "arts-adventure": {
-                        "body1": "Large learning objectives were transformed into playable levels within the game narrative, and learners used leadership competencies to help them evaluate varying degrees of leadership."
+                        "client": "Originally for Novartis International AG",
+                        "skills": "Unity Game Engine and Google Firebase",
+                        "completedOn": "December 2018",
+                        "body1": "Recreated an existing IOS app to showcase Unity's multi-platform support and UI system for multiple resolutions.",
+                        "body2":  "User registration, score and leaderboard managed through Google Firebase"
+                    },
+                    "bmi": {
+                        "client": "Buhler Holding AG and University of St.Gallen",
+                        "skills": "Autodesk Maya and Unity Game Engine",
+                        "body1": "3D subway-map style interface, learners could explore the history of business innovation, gather ideas and share them with their colleagues.",
+                        "body2": "Buhler Holding AG Supplier Innovation Award​ given to SwissVBS for delivering state of the art didactic online learning tools."
+                    },
+                    "velu": {
+                        "client": "National Skill Development Corporation of India (NSDC)",
+                        "skills": "Autodesk Maya and Unity Game Engine",
+                        "body1": "Developed as a technology demonstrator, this game will be used to train millions of apprentices in the craft of welding.",
+                        "body2": "The video game uses the Nintendo Wii remote to simulate a welding gun.",
+                        "body3": "The game was chosen by the National Science Foundation in the USA as one of the 10 best entries in its category in the International Science & Engineering Visualization Challenge and won the People's Choice award."
+                    },
+                    "sales": {
+                        "client": "Originally for Miller Heiman Group",
+                        "skills": "Autodesk Maya and Unity Game Engine",
+                        "body1": "",
+                        "body2": "",
+                        "body3": ""
+                    },
+                    "ignite": {
+                        "client": "Tata Consultancy Services Ignite",
+                        "skills": "Autodesk Maya, Unity Game Engine, and AT&T Labs Text-to-Speech",
+                        "body1": "3D model of the TCS Ignite office as the level for the video game.",
+                        "body2": "Administrator layer that allows the dynamic creation of content and new levels in the game for users with no programming experience.",
+                        "body3": "Text-to-Speech technology used for interaction with avatars."
+                    },
+                    "ar": {
+                        "client": "Tata Consultancy Services Ignite",
+                        "skills": "Autodesk Maya, Unity Game Engine, ARToolKit, and Qualcomm AR.",
+                        "body1": "3D model of the TCS Ignite office as the level for the video game.",
+                        "body2": "Interactive visualization of 3D models of Hindu temples for Android mobile devices using tactile gestures and accelerometer information.",
+                        "body3": "Interactive visualization of 3D models of Tata Motors cars for Android mobile devices and desktop computers."
                     },
                     "portfolioQuote": {
                         "body": "“...“",
@@ -759,7 +865,7 @@
                         "author": "Eduard Sierra.",
                         "cite": "Academic Director of Multimedia Engineering, Nueva Granada Military University."
                     },
-                    "interests": "I am passionate about technology and immersive interactive experiences. I believe in the persuasive power of videogames and their ability to motivate players to complete tasks, learn, change their mindsets and work collectively to accomplish a goal in a playful way. I enjoy traveling, going to the movies and playing volleyball.",
+                    "interests": "I am passionate about technology and immersive interactive experiences. I believe in the persuasive power of videogames and their ability to motivate players to complete tasks, learn, change their mindsets and work collectively to accomplish a goal in a playful way. In my spare time I enjoy traveling, going to the movies and playing volleyball.",
                     "awards": [
                         {
                             "background": "bg-gradient-primary",
@@ -786,6 +892,9 @@
                     "discoverMore": "Read more",
                     "menu": "Menu",
                     "ok": "OK",
+                    "client": "Client: ",
+                    "projectSkills": "Skills: ",
+                    "completedOn": "Completed on: ",
                     "nextJob": "Your company here!",
                     "submit": "Submit",
                     "scrollTop": "Back to top",
