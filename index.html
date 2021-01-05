@@ -215,6 +215,11 @@
                                 <b-img fluid class="rounded-circle w-100 shadow-custom bg-white" :src="program.institution.logo" :alt="program.institution.name"></b-img>
                             </b-col>
                         </li>
+                        <li class="row justify-content-md-center">
+                            <b-col cols="3" md="2" class="text-center" style="background-color: #f8f9fa;">
+                                <b-icon icon="three-dots-vertical" class="text-light rounded-circle"></b-icon>
+                            </b-col>
+                        </li>
                     </ul>
                 </b-container>
             </section>
@@ -416,6 +421,15 @@
                         <p v-html="$t('arts-adventure.body1')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-02.png"></b-img>
                         <p v-html="$t('arts-adventure.body2')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-03.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-04.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-05.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-06.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-07.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-08.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-09.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-10.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-11.png"></b-img>
                     </b-col>
                 </b-row>
             </b-container>
@@ -450,6 +464,8 @@
                         <p v-html="$t('bmi.body1')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-02.png"></b-img>
                         <p v-html="$t('bmi.body2')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-03.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-04.png"></b-img>
                     </b-col>
                 </b-row>
             </b-container>
@@ -486,6 +502,7 @@
                         <p v-html="$t('velu.body2')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-03.jpg"></b-img>
                         <p v-html="$t('velu.body3')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-04.jpg"></b-img>
                     </b-col>
                 </b-row>
             </b-container>
@@ -526,6 +543,48 @@
                 </b-row>
             </b-container>
         </b-modal>
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="ignite" :title="$t('projects[4].title')">
+            <b-container>
+                <b-row>
+                    <b-col lg="5" class="position-relative">
+                        <div class="sticky-top pt-md-4 pb-4">
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-danger text-white p-2" icon="person"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('client')"></span><span class="p" v-text="$t('ignite.client')"></span>
+                            </b-media>
+                            <b-media class="mb-3">
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-success text-white p-2" icon="lightning"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('projectSkills')"></span><span class="p" v-html="$t('ignite.skills')"></span>
+                            </b-media>
+                            <b-media>
+                                <template #aside>
+                                    <b-icon font-scale="2" class="rounded-circle bg-gradient-primary text-white p-2" icon="calendar"></b-icon>
+                                </template>
+                                <span class="h6" v-text="$t('completedOn')"></span><span class="p" v-html="$t('ignite.completedOn')"></span>
+                            </b-media>
+                        </div>
+                    </b-col>
+                    <b-col lg="7">
+                        <div class="mb-3">
+                            <b-embed type="video" aspect="16by9" controls>
+                                <source src="img/example-work05-01.mp4" type="video/mp4">
+                            </b-embed>
+                        </div>
+                        <p v-html="$t('ignite.body1')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-02.png"></b-img>
+                        <p v-html="$t('ignite.body2')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-03.png"></b-img>
+                        <p v-html="$t('ignite.body3')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-04.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-05.png"></b-img>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-modal>
         <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="ar" :title="$t('projects[5].title')">
             <b-container>
                 <b-row>
@@ -552,13 +611,18 @@
                         </div>
                     </b-col>
                     <b-col lg="7">
-                        <model-viewer style="min-height: 200px;" class="w-100 mb-3" src="img/temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
+                        <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/shore_temple/whipple_creek_regional_park_04_1k.hdr" src="img/models/museum/museum.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
+                        <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/shore_temple/whipple_creek_regional_park_04_1k.hdr" src="img/models/basilica/basilica.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
+                        <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/shore_temple/whipple_creek_regional_park_04_1k.hdr" src="img/models/shore_temple/shore_temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
+                        <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/draupadi/whipple_creek_regional_park_04_1k.hdr" src="img/models/draupadi/temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
                         <p v-html="$t('ar.body1')"></p>
-                        <model-viewer style="min-height: 200px;" class="w-100 mb-3" src="img/elephant.glb" alt="A 3D model of an elephant" auto-rotate camera-controls></model-viewer>
+                        <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/elephant/abandoned_hopper_terminal_04_1k.hdr" src="img/models/elephant/elephant.glb" alt="A 3D model of an elephant" auto-rotate camera-controls></model-viewer>
                         <p v-html="$t('ar.body2')"></p>
-                        <b-embed class="mb-3" type="video" aspect="16by9" controls>
-                            <source src="img/example-work06-03.mp4" type="video/mp4">
-                        </b-embed>
+                        <div class="mb-3">
+                            <b-embed type="video" aspect="16by9" controls>
+                                <source src="img/example-work06-03.mp4" type="video/mp4">
+                            </b-embed>
+                        </div>
                         <p v-html="$t('ar.body3')"></p>
                     </b-col>
                 </b-row>
@@ -615,7 +679,7 @@
                     ],
                     "welcome": {
                         "greeting": "Hello",
-                        "message": "I’m a multidisciplinary developer based in Toronto, focused on <strong>Game and Web Development</strong> as well as <strong>Accessibility</strong>. Currently Senior Web Developer at TuesdayAfternoon Media Inc."
+                        "message": "I’m a multidisciplinary interactive developer based in Toronto, focused on <strong>Game and Web Development</strong> as well as <strong>Accessibility</strong>. Currently Senior Web Developer at TuesdayAfternoon Media Inc."
                     },
                     "about": "Fabian is a multimedia engineer committed to developing rich web applications that produce engaging user experiences. Possesses a unique blend of e-learning standards proficiency, game development experience and strong web accessibility acumen. With almost 10 years of experience in the e-learning industry, Fabian has gained extensive knowledge of various learning management systems, authoring tools, and third-party services.",
                     "projects": [
