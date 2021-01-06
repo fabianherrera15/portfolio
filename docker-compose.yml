@@ -1,0 +1,7 @@
+services:
+  httpd:
+    image: portfolio/httpd
+    volumes:
+      - ./vue:/usr/local/apache2/htdocs/
+    ports:
+      - "80:80"
