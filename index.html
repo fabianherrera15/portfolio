@@ -417,10 +417,10 @@
                         </div>
                     </b-col>
                     <b-col lg="7">
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-01.png"></b-img>
                         <p v-html="$t('arts-adventure.body1')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-02.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-01.png"></b-img>
                         <p v-html="$t('arts-adventure.body2')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-02.png"></b-img>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-03.png"></b-img>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-04.png"></b-img>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-05.png"></b-img>
@@ -460,12 +460,18 @@
                         </div>
                     </b-col>
                     <b-col lg="7">
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-01.png"></b-img>
                         <p v-html="$t('bmi.body1')"></p>
+                        <div class="mb-3">
+                            <b-embed type="video" aspect="4by3" controls>
+                                <source src="img/example-work02-01.mp4" type="video/mp4">
+                            </b-embed>
+                        </div>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-02.png"></b-img>
-                        <p v-html="$t('bmi.body2')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-03.png"></b-img>
+                        <p v-html="$t('bmi.body2')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-04.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-05.png"></b-img>
+                        <p v-html="$t('bmi.body3')"></p>
                     </b-col>
                 </b-row>
             </b-container>
@@ -533,12 +539,12 @@
                         </div>
                     </b-col>
                     <b-col lg="7">
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-01.png"></b-img>
                         <p v-html="$t('sales.body1')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-02.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-01.png"></b-img>
                         <p v-html="$t('sales.body2')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-03.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-02.png"></b-img>
                         <p v-html="$t('sales.body3')"></p>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-03.png"></b-img>
                     </b-col>
                 </b-row>
             </b-container>
@@ -569,18 +575,17 @@
                         </div>
                     </b-col>
                     <b-col lg="7">
-                        <div class="mb-3">
-                            <b-embed type="video" aspect="16by9" controls>
-                                <source src="img/example-work05-01.mp4" type="video/mp4">
-                            </b-embed>
-                        </div>
                         <p v-html="$t('ignite.body1')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-02.png"></b-img>
-                        <p v-html="$t('ignite.body2')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-03.png"></b-img>
-                        <p v-html="$t('ignite.body3')"></p>
+                        <p v-html="$t('ignite.body2')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-04.png"></b-img>
+                        <p v-html="$t('ignite.body3')"></p>
                         <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-05.png"></b-img>
+                        <p v-html="$t('ignite.body4')"></p>
+                        <b-embed type="video" aspect="16by9" controls>
+                            <source src="img/example-work05-01.mp4" type="video/mp4">
+                        </b-embed>
                     </b-col>
                 </b-row>
             </b-container>
@@ -611,19 +616,15 @@
                         </div>
                     </b-col>
                     <b-col lg="7">
+                        <p v-html="$t('ar.body1')"></p>
                         <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/shore_temple/whipple_creek_regional_park_04_1k.hdr" src="img/models/museum/museum.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
                         <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/shore_temple/whipple_creek_regional_park_04_1k.hdr" src="img/models/basilica/basilica.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
                         <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/shore_temple/whipple_creek_regional_park_04_1k.hdr" src="img/models/shore_temple/shore_temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
                         <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/draupadi/whipple_creek_regional_park_04_1k.hdr" src="img/models/draupadi/temple.glb" alt="A 3D model of Drapaudi's temple" auto-rotate camera-controls></model-viewer>
-                        <p v-html="$t('ar.body1')"></p>
                         <model-viewer style="min-height: 250px;" class="w-100 mb-3" skybox-image="img/models/elephant/abandoned_hopper_terminal_04_1k.hdr" src="img/models/elephant/elephant.glb" alt="A 3D model of an elephant" auto-rotate camera-controls></model-viewer>
-                        <p v-html="$t('ar.body2')"></p>
-                        <div class="mb-3">
-                            <b-embed type="video" aspect="16by9" controls>
-                                <source src="img/example-work06-03.mp4" type="video/mp4">
-                            </b-embed>
-                        </div>
-                        <p v-html="$t('ar.body3')"></p>
+                        <b-embed type="video" aspect="16by9" controls>
+                            <source src="img/example-work06-03.mp4" type="video/mp4">
+                        </b-embed>
                     </b-col>
                 </b-row>
             </b-container>
@@ -687,7 +688,7 @@
                             "id": "arts-adventure",
                             "thumbnail": "img/example-work01.jpg",
                             "title": "Art's Adventure",
-                            "summary": "Large learning objectives were transformed into playable levels within the game narrative, and learners used leadership competencies to help them evaluate varying degrees of leadership.",
+                            "summary": "In this game, large learning objectives were transformed into playable levels within the game narrative, and learners used leadership competencies to help them evaluate varying degrees of leadership.",
                         },
                         {
                             "id": "bmi",
@@ -717,49 +718,54 @@
                             "id": "ar",
                             "thumbnail": "img/example-work06.png",
                             "title": "Augmented Reality",
-                            "summary": "Interactive visualization of 3D models of Hindu temples using tactile gestures and accelerometer information for Android mobile devices.",
+                            "summary": "Interactive visualization of 3D models of Indian buildings using tactile gestures and accelerometer information for mobile devices without QR code-based target images.",
                         }
                     ],
                     "arts-adventure": {
                         "client": "Originally for Novartis International AG",
-                        "skills": "Unity Game Engine and Google Firebase",
+                        "skills": "Unity game engine and Google Firebase",
                         "completedOn": "December 2018",
-                        "body1": "Recreated an existing IOS app to showcase Unity's multi-platform support and UI system for multiple resolutions.",
-                        "body2":  "User registration, score and leaderboard managed through Google Firebase"
+                        "body1": "Recreated the first level of an existing IOS game to showcase Unity's multi-platform support and responsive UI system for multiple resolutions.",
+                        "body2": "User registration, score and leaderboard managed through Google Firebase."
                     },
                     "bmi": {
                         "client": "Buhler Holding AG and University of St.Gallen",
-                        "skills": "Autodesk Maya and Unity Game Engine",
-                        "body1": "3D subway-map style interface, learners could explore the history of business innovation, gather ideas and share them with their colleagues.",
-                        "body2": "Buhler Holding AG Supplier Innovation Award​ given to SwissVBS for delivering state of the art didactic online learning tools."
+                        "completedOn": "June 2013",
+                        "skills": "Autodesk Maya and Unity game engine",
+                        "body1": "The mobile app provides an open-ended, gamified virtual world to explore the timeline of business innovation.",
+                        "body2": "Learners could create their own paths, discover stories at their own pace and log ideas within their virtual notebook.",
+                        "body3": "Buhler Holding AG Supplier Innovation Award​ given to SwissVBS for delivering state of the art didactic online learning tools."
                     },
                     "velu": {
                         "client": "National Skill Development Corporation of India (NSDC)",
-                        "skills": "Autodesk Maya and Unity Game Engine",
+                        "completedOn": "June 2011",
+                        "skills": "Autodesk Maya and Unity game engine",
                         "body1": "Developed as a technology demonstrator, this game will be used to train millions of apprentices in the craft of welding.",
                         "body2": "The video game uses the Nintendo Wii remote to simulate a welding gun.",
                         "body3": "The game was chosen by the National Science Foundation in the USA as one of the 10 best entries in its category in the International Science & Engineering Visualization Challenge and won the People's Choice award."
                     },
                     "sales": {
                         "client": "Originally for Miller Heiman Group",
-                        "skills": "Autodesk Maya and Unity Game Engine",
-                        "body1": "",
-                        "body2": "",
-                        "body3": ""
+                        "skills": "Autodesk Maya and Unity game engine",
+                        "completedOn": "March 2018",
+                        "body1": "An interactive experience that combines 2D and 3D graphics.",
+                        "body2": "It implements a user interface that reacts appropriately to varying screen sizes.",
+                        "body3": "The user receives feedback according to the choices made during this conversation simulation."
                     },
                     "ignite": {
                         "client": "Tata Consultancy Services Ignite",
-                        "skills": "Autodesk Maya, Unity Game Engine, and AT&T Labs Text-to-Speech",
-                        "body1": "3D model of the TCS Ignite office as the level for the video game.",
-                        "body2": "Administrator layer that allows the dynamic creation of content and new levels in the game for users with no programming experience.",
-                        "body3": "Text-to-Speech technology used for interaction with avatars."
+                        "skills": "Autodesk Maya, Unity game engine, and AT&T Labs Text-to-Speech",
+                        "completedOn": "October 2011",
+                        "body1": "A high-fidelity 3D model of the TCS Ignite office was created to serve as the game world.",
+                        "body2": "It features an authoring layer that allows users with no programming experience, the opportunity to dynamically create content and new levels in the game.",
+                        "body3": "AT&T Labs Text-to-Speech technology was used in interactions with non-playable-characters.",
+                        "body4": "This serious game aims to teach soft skills and professional behaviour in an immersive and controlled space."
                     },
                     "ar": {
                         "client": "Tata Consultancy Services Ignite",
-                        "skills": "Autodesk Maya, Unity Game Engine, ARToolKit, and Qualcomm AR.",
-                        "body1": "3D model of the TCS Ignite office as the level for the video game.",
-                        "body2": "Interactive visualization of 3D models of Hindu temples for Android mobile devices using tactile gestures and accelerometer information.",
-                        "body3": "Interactive visualization of 3D models of Tata Motors cars for Android mobile devices and desktop computers."
+                        "skills": "Autodesk Maya, Unity game engine, ARToolKit, and Vuforia engine",
+                        "completedOn": "December 2011",
+                        "body1": "Using Vuforia's AR system, these applications enable users to visualize 3D representations of different sightseeing places located in the town of Mahabalippuram by using their phone's camera.",
                     },
                     "portfolioQuote": {
                         "body": "“...“",
@@ -885,7 +891,7 @@
                             },
                             "title": "Multimedia Engineering (Hons)",
                             "period": "2004 - 2011",
-                            "description": "Interactive media, computer graphics, animation and simulation."
+                            "description": "Bachelor's degree that covered interactive media, computer graphics, animation and simulation."
                         },
                         {
                             "institution": {
@@ -894,7 +900,7 @@
                             },
                             "title": "Game Development",
                             "period": "2015 - 2016",
-                            "description": "Computer programming, 2D and 3D graphics."
+                            "description": "Certificate program focused on computer programming, 2D and 3D graphics, and code optimization in Unity game engine."
                         },
                         {
                             "institution": {
@@ -903,7 +909,7 @@
                             },
                             "title": "Product Management",
                             "period": "2018",
-                            "description": "Assessing the market, developing a business case, customer and user validation, user personas, agile & lean and product design."
+                            "description": "Assessing the market, developing a business case, customer and user validation, creation of user personas, product design, and agile & lean development."
                         },
                         {
                             "institution": {
@@ -912,7 +918,7 @@
                             },
                             "title": "User Experience Design",
                             "period": "2019",
-                            "description": "User research, information architecture, sketching and wireframing, and prototyping."
+                            "description": "User research, information architecture, sketching, wireframing, and prototyping."
                         },
                         {
                             "institution": {
@@ -925,7 +931,7 @@
                         }
                     ],
                     "educationQuote": {
-                        "body": "“I’ve had the chance to observe and assess his computer programming skills as well as his analytical, critical thinking and problem- solving abilities. Mr. Herrera Caicedo excelled in every area, particularly in the subjects of computer graphics and 3D applications.“",
+                        "body": "“I’ve had the chance to observe and assess his computer programming skills as well as his analytical, critical thinking and problem-solving abilities. Mr. Herrera Caicedo excelled in every area, particularly in the subjects of computer graphics and 3D applications.“",
                         "author": "Eduard Sierra.",
                         "cite": "Academic Director of Multimedia Engineering, Nueva Granada Military University."
                     },
@@ -951,7 +957,7 @@
                         }
                     ],
                     "contact": {
-                        "body": "I am always looking to meet new developers that share the same passion of creating games that go beyond entertainment. If you're looking to partner with a serious game developer on the forefront of emerging technologies... please get in touch with me.",
+                        "body": "I am always looking to meet new developers that share the same passion of creating games that go beyond entertainment. Please get in touch with me if you're looking to partner with an interactive developer on the forefront of emerging technologies.",
                     },
                     "discoverMore": "Read more",
                     "menu": "Menu",
