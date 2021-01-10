@@ -28,20 +28,6 @@
                 <b-icon class="text-white" font-scale="2" icon="list"></b-icon>
             </b-button>
         </b-navbar>
-        <div class="position-relative pb-8 pt-5 pt-lg-8 d-flex align-items-center welcome-jumbotron">
-            <b-container fluid>
-                <span class="position-absolute bg-gradient-success"></span>
-                <b-container class="d-flex align-items-center">
-                    <div class="row">
-                        <div class="col-md-10 col-lg-7">
-                            <h1 class="display-2 text-white" v-html="$t('welcome.greeting')"></h1>
-                            <p class="text-white mt-0 mb-5" v-html="$t('welcome.message')"></p>
-                            <b-button @click="scrollToElement('about')" variant="primary" v-text="$t('discoverMore')"></b-button>
-                        </div>
-                    </div>
-                </b-container>
-            </b-container>
-        </div>
         <b-sidebar id="sidebar" aria-labelledby="sidebar-title" right shadow backdrop no-header>
             <template #default="{ hide }">
                 <div class="px-4 py-3 modal-header border-0">
@@ -54,17 +40,20 @@
             </template>
         </b-sidebar>
         <main>
-            <!-- <b-container class="bg-white">
-                <b-row>
-                    <b-col>
-                        <h2>Heading 2</h2>
-                        <h3>Heading 3</h2>
-                        <h4>Heading 4</h2>
-                        <h5>Heading 5</h2>
-                        <h6>Heading 6</h2>
-                    </b-col>
-                </b-row>
-            </b-container> -->
+            <section id="welcome">
+                <b-container fluid class="position-relative pb-8 pt-5 pt-lg-8 d-flex align-items-center welcome-jumbotron">
+                    <span class="position-absolute bg-gradient-success"></span>
+                    <b-container class="d-flex align-items-center">
+                        <b-row>
+                            <b-col cols="10" md="7">
+                                <h1 class="display-2 text-white" v-html="$t('welcome.greeting')"></h1>
+                                <p class="text-white mt-0 mb-5" v-html="$t('welcome.message')"></p>
+                                <b-button @click="scrollToElement('about')" variant="primary" v-text="$t('discoverMore')"></b-button>
+                            </b-col>
+                        </b-row>
+                    </b-container>
+                </b-container>
+            </section>
             <section id="about" class="py-5">
                 <b-container>
                     <b-row>
@@ -97,7 +86,6 @@
                     <b-row>
                         <b-col lg="4" class="mb-3" v-for="(project, index) in $t('projects')">
                             <b-card
-                                title-tag="h4"
                                 :img-src="project.thumbnail"
                                 img-alt=""
                                 img-top
@@ -105,7 +93,7 @@
                                 class="shadow-custom border-0 h-100"
                                 no-body>
                                 <b-card-body class="p-4">
-                                    <b-card-title v-html="project.title"></b-card-title>
+                                    <b-card-title class="h4" title-tag="h3" v-html="project.title"></b-card-title>
                                     <b-card-text v-html="project.summary"></b-card-text>
                                 </b-card-body>
                                 <b-card-footer class="bg-transparent p-4 pt-0 border-0">
@@ -138,7 +126,7 @@
                     <ul class="p-0 timeline">
                         <li :class="[index % 2 ? 'justify-content-end' : 'justify-content-start', 'row mb-5']" v-for="(job, index) in $t('jobs')">
                             <b-col cols="9" md="5" order="2" :order-md="index % 2 ? 2 : 1">
-                                <p class="h5" v-html="job.title"></h4>
+                                <h3 class="h5" v-html="job.title"></h3>
                                 <p v-html="job.period"></p>
                                 <p v-html="job.description"></p>
                             </b-col>
@@ -176,14 +164,13 @@
                     <b-row>
                         <b-col lg="4" class="mb-3" v-for="(skill, index) in $t('skills')">
                             <b-card
-                                title-tag="h3"
                                 class="shadow-custom border-0 h-100"
                                 no-body>
                                 <b-card-body class="p-4">
                                     <b-row>
                                         <b-col>
-                                            <b-card-title class="h6 text-uppercase text-muted mb-0 small" v-html="skill.type"></b-card-title>
-                                            <span class="h5 font-weight-bold mb-0" v-html="skill.name"></span>
+                                            <b-card-title title-tag="p" class="h6 text-uppercase text-muted mb-0 small" v-html="skill.type"></b-card-title>
+                                            <h3 class="h5 font-weight-bold mb-0" v-html="skill.name"></h3>
                                         </b-col>
                                         <b-col cols="auto">
                                             <b-avatar :class="[skill.background, 'text-white']" :text="skill.logo"></b-avatar>
@@ -209,7 +196,7 @@
                     <ul class="p-0 timeline inverse">
                         <li :class="[index % 2 ? 'justify-content-start' : 'justify-content-end', 'row mb-5']" v-for="(program, index) in $t('education')">
                             <b-col cols="9" md="5" order="2" :order-md="index % 2 ? 1 : 2">
-                                <p class="h5" v-html="program.title"></h4>
+                                <h3 class="h5" v-html="program.title"></h3>
                                 <p v-html="program.period"></p>
                                 <p v-html="program.description"></p>
                             </b-col>
@@ -283,7 +270,7 @@
                                 <b-card-body class="p-4">
                                     <b-row>
                                         <b-col>
-                                            <b-card-title class="h6 text-uppercase text-center text-muted mb-0 small" v-html="award.title"></b-card-title>
+                                            <b-card-title title-tag="h3" class="h6 text-uppercase text-center text-muted mb-0 small" v-html="award.title"></b-card-title>
                                         </b-col>
                                     </b-row>
                                     <p class="mt-3 mb-0" v-html="award.description"></p>
@@ -308,7 +295,7 @@
                     <b-row>
                         <b-col>
                             <b-card v-if="isFormVisible" no-body class="overflow-hidden shadow-custom border-0 bg-secondary">
-                                <b-img fluid class="d-block d-lg-none w-100" src="img/contact_m.jpg"></b-img>
+                                <b-img fluid class="d-block d-lg-none w-100" src="img/contact_m.jpg" alt=""></b-img>
                                 <b-row no-gutters>
                                     <b-col lg="7">
                                         <b-card-body class="p-4">
@@ -361,7 +348,7 @@
                                 </b-row>
                             </b-card>
                             <b-card v-else no-body class="overflow-hidden shadow-custom border-0 bg-secondary">
-                                <b-img fluid class="w-100" src="img/contact_m.jpg"></b-img>
+                                <b-img fluid class="w-100" src="img/contact_m.jpg" alt=""></b-img>
                                 <b-card-body class="p-4">
                                     <b-row no-gutters>
                                         <b-col md="7">
@@ -371,7 +358,7 @@
                                             <b-list-group>
                                                 <b-list-group-item class="d-flex align-items-center border-0 bg-transparent px-0">
                                                     <b-button href="mailto:me@fabianherrera.ca" variant="primary" class="mb-2">
-                                                        <b-icon variant="white" class="mr-3" icon="envelope-fill" aria-label=""></b-icon>Email
+                                                        <b-icon variant="white" class="mr-3" icon="envelope-fill"></b-icon>Email
                                                     </b-button>
                                                 </b-list-group-item>
                                                 <b-list-group-item class="d-flex align-items-center border-0 bg-transparent px-0">
@@ -408,7 +395,7 @@
                 <b-container>
                     <b-row>
                         <b-col class="d-flex justify-content-between align-items-center">
-                            <span class="text-muted small" v-html="$t('copyright')"></span>
+                            <span class="small" v-html="$t('copyright')"></span>
                             <b-button :aria-label="$t('scrollTop')" variant="transparent" class="p-0 my-2 no-shadow" @click="window.scrollTo({top: 0, behavior: 'smooth'});">
                                 <b-icon font-scale="2" icon="arrow-up-circle"></b-icon>
                             </b-button>
@@ -417,7 +404,7 @@
                 </b-container>
             </b-container>
         </footer>
-        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="arts-adventure" :title="$t('projects[0].title')">
+        <b-modal size="lg" ok-only :ok-title="$t('ok')" footer-class="border-0" header-class="border-custom bg-secondary shadow-custom" body-class="bg-white" id="arts-adventure" :title="$t('projects[0].title')" title-tag="h2" title-class="h5">
             <b-container>
                 <b-row>
                     <b-col lg="5" class="position-relative">
@@ -444,18 +431,18 @@
                     </b-col>
                     <b-col lg="7">
                         <p v-html="$t('arts-adventure.body1')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-01.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-01.png" alt=""></b-img>
                         <p v-html="$t('arts-adventure.body2')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-02.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-03.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-04.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-05.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-06.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-07.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-08.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-09.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-10.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-11.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-02.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-03.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-04.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-05.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-06.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-07.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-08.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-09.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-10.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work01-11.png" alt=""></b-img>
                     </b-col>
                 </b-row>
             </b-container>
@@ -492,11 +479,11 @@
                                 <source src="img/example-work02-01.mp4" type="video/mp4">
                             </b-embed>
                         </div>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-02.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-03.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-02.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-03.png" alt=""></b-img>
                         <p v-html="$t('bmi.body2')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-04.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-05.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-04.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work02-05.png" alt=""></b-img>
                         <p v-html="$t('bmi.body3')"></p>
                     </b-col>
                 </b-row>
@@ -528,13 +515,13 @@
                         </div>
                     </b-col>
                     <b-col lg="7">
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-01.jpg"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-01.jpg" alt=""></b-img>
                         <p v-html="$t('velu.body1')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-02.jpg"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-02.jpg" alt=""></b-img>
                         <p v-html="$t('velu.body2')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-03.jpg"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-03.jpg" alt=""></b-img>
                         <p v-html="$t('velu.body3')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-04.jpg"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work03-04.jpg" alt=""></b-img>
                     </b-col>
                 </b-row>
             </b-container>
@@ -566,11 +553,11 @@
                     </b-col>
                     <b-col lg="7">
                         <p v-html="$t('sales.body1')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-01.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-01.png" alt=""></b-img>
                         <p v-html="$t('sales.body2')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-02.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-02.png" alt=""></b-img>
                         <p v-html="$t('sales.body3')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-03.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work04-03.png" alt=""></b-img>
                     </b-col>
                 </b-row>
             </b-container>
@@ -602,12 +589,12 @@
                     </b-col>
                     <b-col lg="7">
                         <p v-html="$t('ignite.body1')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-02.png"></b-img>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-03.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-02.png" alt=""></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-03.png" alt=""></b-img>
                         <p v-html="$t('ignite.body2')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-04.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-04.png" alt=""></b-img>
                         <p v-html="$t('ignite.body3')"></p>
-                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-05.png"></b-img>
+                        <b-img class="custom-shadow rounded mb-3" fluid src="img/example-work05-05.png" alt=""></b-img>
                         <p v-html="$t('ignite.body4')"></p>
                         <b-embed type="video" aspect="16by9" controls>
                             <source src="img/example-work05-01.mp4" type="video/mp4">
