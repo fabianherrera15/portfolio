@@ -3,6 +3,9 @@ services:
   httpd:
     image: portfolio/httpd
     volumes:
-      - ./vue:/usr/local/apache2/htdocs/
+      - ./vue:/var/www/vue
+      - ./httpd/letsencrypt:/etc/letsencrypt
+      - ./httpd/sites-enabled:/etc/apache2/sites-enabled
     ports:
       - "80:80"
+      - "443:443"
