@@ -1,9 +1,322 @@
 {
-    "experience": [
+    "sections": [
         {
+            "title": "About",
+            "id": "about"
+        },
+        {
+            "title": "Portfolio",
+            "id": "portfolio"
+        },
+        {
+            "title": "Experience",
+            "id": "experience"
+        },
+        {
+            "title": "Skills",
+            "id": "skills"
+        },
+        {
+            "title": "Education",
+            "id": "education"
+        },
+        {
+            "title": "Interests",
+            "id": "interests"
+        },
+        {
+            "title": "Awards",
+            "id": "awards"
+        },
+        {
+            "title": "Contact",
+            "id": "contact"
+        }
+    ],
+    "welcome": {
+        "greeting": "Hello",
+        "message": "I am a multidisciplinary interactive developer based in Toronto, focused on <strong>Game and Web Development</strong> as well as <strong>Accessibility</strong>. Currently working as a Senior Web Developer at TuesdayAfternoon Media Inc."
+    },
+    "about": "I am a multimedia engineer committed to developing rich web applications that produce engaging user experiences. I possess a unique blend of e-learning standards proficiency, game development experience and strong web accessibility acumen. With almost 10 years of experience in the e-learning industry, I have gained extensive knowledge of various learning management systems, authoring tools, and third-party services.",
+    "projects": [{
+            "id": "arts-adventure",
+            "thumbnail": "img/example-work01.png",
+            "title": "Art's Adventure",
+            "summary": "In this game, large learning objectives were transformed into playable levels within the game narrative, and learners used leadership competencies to help them evaluate varying degrees of leadership."
+        },
+        {
+            "id": "bmi",
+            "thumbnail": "img/example-work02.jpg",
+            "title": "Business Model Innovation App",
+            "summary": "Through a 3D subway-map style interface, learners could explore interactively the history of business innovation, gather ideas and share them with their colleagues."
+        },
+        {
+            "id": "velu",
+            "thumbnail": "img/example-work03.jpg",
+            "title": "Velu The Welder",
+            "summary": "Developed as a technology demonstrator for the National Skills Development of India, this award-winning game was designed to expose players to basic skill sets aimed at getting acquainted with the craft of welding."
+        },
+        {
+            "id": "sales",
+            "thumbnail": "img/example-work04.png",
+            "title": "Conversation Simulation",
+            "summary": "A 2D-based simulation of a sales conversation for training purposes. Users' actions determine their paths in this animated branching scenario."
+        },
+        {
+            "id": "ignite",
+            "thumbnail": "img/example-work05.png",
+            "title": "Virtual Ignite",
+            "summary": "Serious game used for onboarding of new associates. This 3D game features an authoring layer that allows dynamic creation of content and new levels in the game for instructional designers with no programming experience."
+        },
+        {
+            "id": "ar",
+            "thumbnail": "img/example-work06.png",
+            "title": "Augmented Reality",
+            "summary": "Interactive visualization of 3D models of Indian buildings using tactile gestures and accelerometer information for mobile devices without QR code-based target images."
+        }
+    ],
+    "arts-adventure": {
+        "client": "Originally for Novartis International AG",
+        "skills": "Unity game engine and Google Firebase",
+        "completedOn": "December 2018",
+        "body1": "Recreated the first level of an existing IOS game to showcase Unity's multi-platform support and responsive UI system for multiple resolutions.",
+        "body2": "User registration, score and leaderboard managed through Google Firebase."
+    },
+    "bmi": {
+        "client": "Buhler Holding AG and University of St.Gallen",
+        "completedOn": "June 2013",
+        "skills": "Autodesk Maya and Unity game engine",
+        "body1": "The mobile app provides an open-ended, gamified virtual world to explore the timeline of business innovation.",
+        "body2": "Learners could create their own paths, discover stories at their own pace and log ideas within their virtual notebook.",
+        "body3": "Buhler Holding AG Supplier Innovation Award​ given to SwissVBS for delivering state of the art didactic online learning tools."
+    },
+    "velu": {
+        "client": "National Skill Development Corporation of India (NSDC)",
+        "completedOn": "June 2011",
+        "skills": "Autodesk Maya and Unity game engine",
+        "body1": "Developed as a technology demonstrator, this game will be used to train millions of apprentices in the craft of welding.",
+        "body2": "The video game uses the Nintendo Wii remote to simulate a welding gun.",
+        "body3": "The game was chosen by the National Science Foundation in the USA as one of the 10 best entries in its category in the International Science & Engineering Visualization Challenge and won the People's Choice award."
+    },
+    "sales": {
+        "client": "Originally for Miller Heiman Group",
+        "skills": "Autodesk Maya and Unity game engine",
+        "completedOn": "March 2018",
+        "body1": "An interactive experience that combines 2D and 3D graphics.",
+        "body2": "It implements a user interface that reacts appropriately to varying screen sizes.",
+        "body3": "The user receives feedback according to the choices made during this conversation simulation."
+    },
+    "ignite": {
+        "client": "Tata Consultancy Services Ignite",
+        "skills": "Autodesk Maya, Unity game engine, and AT&T Labs Text-to-Speech",
+        "completedOn": "October 2011",
+        "body1": "A high-fidelity 3D model of the TCS Ignite office was created to serve as the game world.",
+        "body2": "It features an authoring layer that allows users with no programming experience, the opportunity to dynamically create content and new levels in the game.",
+        "body3": "AT&T Labs Text-to-Speech technology was used in interactions with non-playable-characters.",
+        "body4": "This serious game aims to teach soft skills and professional behaviour in an immersive and controlled space."
+    },
+    "ar": {
+        "client": "Tata Consultancy Services Ignite",
+        "skills": "Autodesk Maya, Unity game engine, ARToolKit, and Vuforia engine",
+        "completedOn": "December 2011",
+        "body1": "Using Vuforia's AR system, these applications enable users to visualize 3D representations of different sightseeing places located in the town of Mahabalippuram by using their phone's camera."
+    },
+    "portfolioQuote": {
+        "body": "“...“",
+        "author": "Scott Montgomery.",
+        "cite": "Solution Consultant, Cornerstone OnDemand."
+    },
+    "jobs": [{
+            "company": {
+                "logo": "img/swissvbs.png",
+                "name": "SwissVBS"
+            },
             "title": "Media Developer-3D Specialist",
             "period": "2008 - 2009",
             "description": "Create e-learning modules including visual renderings and animations in 3D using Autodesk Maya, Adobe Flash, Adobe Photoshop, audio-editing software and in-house tools."
+        },
+        {
+            "company": {
+                "logo": "img/tcs.jpeg",
+                "name": "TATA Consultancy Services"
+            },
+            "title": "Game Designer and Developer",
+            "period": "2010 - 2012",
+            "description": "Responsible for project management, documentation, artwork, user experience, programming, usability testing and UI implementation of 3D applications and serious games that use augmented reality technologies along with motion and image recognition that can be deployed in stand-alone computer systems and mobile devices."
+        },
+        {
+            "company": {
+                "logo": "img/swissvbs.png",
+                "name": "SwissVBS"
+            },
+            "title": "3D Game and Media Specialist",
+            "period": "2012 - 2014",
+            "description": "Design and implementation of 3D prototypes for educational campaigns using augmented reality, game mechanics and interactions in performance-based learning content."
+        },
+        {
+            "company": {
+                "logo": "img/swissvbs.png",
+                "name": "SwissVBS"
+            },
+            "title": "Senior Application Developer",
+            "period": "2014 - 2014",
+            "description": "Conceptualization, documentation, implementation and maintenance of various user-centered solutions while ensuring that existing systems and applications become more effective and efficient."
+        },
+        {
+            "company": {
+                "logo": "img/swissvbs.png",
+                "name": "SwissVBS"
+            },
+            "title": "Lead Software Developer",
+            "period": "2015 - 2018",
+            "description": "Custom HTML5 web application development for SCORM-compliant and third-party Learning Management Systems and services."
+        },
+        {
+            "company": {
+                "logo": "img/tam.png",
+                "name": "TuesdayAfternoon Media,"
+            },
+            "title": "Senior Web Developer",
+            "period": "2018 - present",
+            "description": "Research of trends and development of technology and tools in the fields of web development and learning methodology in order to innovate and elevate the company's learning solutions."
         }
-    ]
-}
+    ],
+    "experienceQuote": {
+        "body": "“Mr. Herrera served as a project leader in an innovative serious game that aspires to offer an introductory welding experience to almost 5 million Indians who will be trained to become skilled welders...“",
+        "author": "Raman Srinivasan, PhD.",
+        "cite": "Principal Consultant and Head Ignite, Tata Consultancy Services."
+    },
+    "skills": [{
+            "background": "bg-gradient-primary",
+            "type": "Programming",
+            "name": "C#",
+            "logo": "C#",
+            "percentage": "60%",
+            "level": "Intermediate"
+        },
+        {
+            "background": "bg-gradient-default",
+            "type": "Programming",
+            "name": "JavaScript",
+            "logo": "JS",
+            "percentage": "80%",
+            "level": "Advanced"
+        },
+        {
+            "background": "bg-gradient-success",
+            "type": "Game Engine",
+            "name": "Unity",
+            "logo": "U",
+            "percentage": "70%",
+            "level": "Advanced"
+        },
+        {
+            "background": "bg-gradient-danger",
+            "type": "Platform",
+            "name": "Google Firebase",
+            "logo": "G",
+            "percentage": "40%",
+            "level": "Beginner"
+        },
+        {
+            "background": "bg-gradient-info",
+            "type": "Framework",
+            "name": "Vue.js",
+            "logo": "V",
+            "percentage": "80%",
+            "level": "Advanced"
+        },
+        {
+            "background": "bg-gradient-warning",
+            "type": "3D Software",
+            "name": "Maya",
+            "logo": "M",
+            "percentage": "80%",
+            "level": "Advanced"
+        }
+    ],
+    "education": [{
+            "institution": {
+                "logo": "img/umng.jpg",
+                "name": "Nueva Granada Military University"
+            },
+            "title": "Multimedia Engineering (Hons)",
+            "period": "2004 - 2011",
+            "description": "Bachelor's degree that covered interactive media, computer graphics, animation and simulation."
+        },
+        {
+            "institution": {
+                "logo": "img/georgebrown.jpg",
+                "name": "George Brown College,"
+            },
+            "title": "Game Development",
+            "period": "2015 - 2016",
+            "description": "Certificate program focused on computer programming, 2D and 3D graphics, and code optimization in Unity game engine."
+        },
+        {
+            "institution": {
+                "logo": "img/brainstation.png",
+                "name": "Brainstation,"
+            },
+            "title": "Product Management",
+            "period": "2018",
+            "description": "Assessing the market, developing a business case, customer and user validation, creation of user personas, product design, and agile & lean development."
+        },
+        {
+            "institution": {
+                "logo": "img/brainstation.png",
+                "name": "Brainstation,"
+            },
+            "title": "User Experience Design",
+            "period": "2019",
+            "description": "User research, information architecture, sketching, wireframing, and prototyping."
+        },
+        {
+            "institution": {
+                "logo": "img/ryerson.jpg",
+                "name": "Ryerson University"
+            },
+            "title": "Web Accessibility Auditing",
+            "period": "2020",
+            "description": "Web accessibility guidelines and standards, types of audits, automated review tools, assistive technology testing, reporting and user testing."
+        }
+    ],
+    "educationQuote": {
+        "body": "“I’ve had the chance to observe and assess his computer programming skills as well as his analytical, critical thinking and problem-solving abilities. Mr. Herrera Caicedo excelled in every area, particularly in the subjects of computer graphics and 3D applications.“",
+        "author": "Eduard Sierra.",
+        "cite": "Academic Director of Multimedia Engineering, Nueva Granada Military University."
+    },
+    "interests": "I am passionate about technology and immersive interactive experiences. I believe in the persuasive power of videogames and their ability to motivate players to complete tasks, learn, change their mindsets and work collectively to accomplish a goal in a playful way. In my spare time I enjoy traveling, going to the movies and playing volleyball.",
+    "awards": [{
+            "background": "bg-gradient-primary",
+            "title": "Buhler Holding AG Supplier Innovation Award",
+            "icon": "star-fill",
+            "description": "Given to SwissVBS for delivering state of the art didactic online learning tools (Business Model Innovation app)."
+        },
+        {
+            "background": "bg-gradient-default",
+            "title": "People’s Choice Award",
+            "icon": "trophy-fill",
+            "description": "Interactive game winner for “Velu The Welder“ of the 2011 International Science and Engineering Visualization Challenge, sponsored by the U.S. National Science Foundation (NSF)."
+        },
+        {
+            "background": "bg-gradient-danger",
+            "title": "Meritorious Bachelor Thesis",
+            "icon": "award-fill",
+            "description": "Award given for bachelor thesis titled “Design of a methodology for the development of 3D internet applications.“"
+        }
+    ],
+    "contact": {
+        "body": "I am always looking to meet new developers that share the same passion of creating games that go beyond entertainment. Please get in touch with me if you're looking to partner with an interactive developer on the forefront of emerging technologies."
+    },
+    "discoverMore": "Read more",
+    "menu": "Menu",
+    "ok": "OK",
+    "client": "Client: ",
+    "projectSkills": "Skills: ",
+    "completedOn": "Completed on: ",
+    "nextJob": "Your company here!",
+    "submit": "Submit",
+    "scrollTop": "Back to top",
+    "copyright": "© 2021 fabianherrera.ca. All rights reserved."
+} 
