@@ -123,20 +123,23 @@
                             <h2 class="mb-4">Experience</h2>
                         </b-col>
                     </b-row>
-                    <ul class="p-0 timeline">
-                        <li :class="[index % 2 ? 'justify-content-end' : 'justify-content-start', 'row mb-5']" v-for="(job, index) in $t('jobs')">
-                            <b-col cols="9" md="5" order="2" :order-md="index % 2 ? 2 : 1">
+                    <ul class="p-0 timeline inverse">
+                        <li :class="[index % 2 ? 'justify-content-start' : 'justify-content-end', 'row mb-5']" v-for="(job, index) in $t('jobs')">
+                            <b-col cols="9" md="5" order="2" :order-md="index % 2 ? 1 : 2">
                                 <h3 class="h5" v-html="job.title"></h3>
                                 <p v-html="job.period"></p>
                                 <p v-html="job.description"></p>
                             </b-col>
-                            <b-col cols="3" md="2" order="1" :order-md="index % 2 ? 1 : 2">
+                            <b-col cols="3" md="2" order="1" :order-md="index % 2 ? 2 : 1">
                                 <b-img fluid class="rounded-circle w-100 shadow-custom" :src="job.company.logo" :alt="job.company.name"></b-img>
                             </b-col>
                         </li>
                         <li class="row justify-content-md-center">
                             <b-col cols="3" md="2">
-                                <b-img fluid class="rounded-circle w-100 shadow-custom bg-gradient-warning" src="img/yourlogo.svg" :alt="$t('nextJob')"></b-img>
+                                <div class="rounded-circle w-100 shadow-custom bg-gradient-warning p-4">
+                                    <b-img fluid src="img/laptop.svg" :alt="$t('nextJob')"></b-img>
+                                </div>
+                                
                             </b-col>
                         </li>
                     </ul>
@@ -784,32 +787,33 @@
                         "author": "Scott Montgomery.",
                         "cite": "Solution Consultant, Cornerstone OnDemand."
                     },
-                    "jobs": [{
+                    "jobs": [
+                        {
+                            "company": {
+                                "logo": "img/tophat.png",
+                                "name": "Top Hat,"
+                            },
+                            "title": "Software Developer IV",
+                            "period": "2021 - present",
+                            "description": "As part of the platform team, enhance build quality, developer performance and accessibility for users. Ensure that web components are compliant with web standards and AODA, WCAG 2.0 Level A, and Level AA requirements."
+                        },
+                        {
+                            "company": {
+                                "logo": "img/tam.png",
+                                "name": "TuesdayAfternoon Media,"
+                            },
+                            "title": "Senior Web Developer",
+                            "period": "2018 - 2021",
+                            "description": "Research of trends and development of technology and tools in the fields of web development and learning methodology in order to innovate and elevate the company's learning solutions."
+                        },
+                        {
                             "company": {
                                 "logo": "img/swissvbs.png",
                                 "name": "SwissVBS"
                             },
-                            "title": "Media Developer-3D Specialist",
-                            "period": "2008 - 2009",
-                            "description": "Create e-learning modules including visual renderings and animations in 3D using Autodesk Maya, Adobe Flash, Adobe Photoshop, audio-editing software and in-house tools."
-                        },
-                        {
-                            "company": {
-                                "logo": "img/tcs.jpeg",
-                                "name": "TATA Consultancy Services"
-                            },
-                            "title": "Game Designer and Developer",
-                            "period": "2010 - 2012",
-                            "description": "Responsible for project management, documentation, artwork, user experience, programming, usability testing and UI implementation of 3D applications and serious games that use augmented reality technologies along with motion and image recognition that can be deployed in stand-alone computer systems and mobile devices."
-                        },
-                        {
-                            "company": {
-                                "logo": "img/swissvbs.png",
-                                "name": "SwissVBS"
-                            },
-                            "title": "3D Game and Media Specialist",
-                            "period": "2012 - 2014",
-                            "description": "Design and implementation of 3D prototypes for educational campaigns using augmented reality, game mechanics and interactions in performance-based learning content."
+                            "title": "Lead Software Developer",
+                            "period": "2015 - 2018",
+                            "description": "Custom HTML5 web application development for SCORM-compliant and third-party Learning Management Systems and services."
                         },
                         {
                             "company": {
@@ -825,27 +829,27 @@
                                 "logo": "img/swissvbs.png",
                                 "name": "SwissVBS"
                             },
-                            "title": "Lead Software Developer",
-                            "period": "2015 - 2018",
-                            "description": "Custom HTML5 web application development for SCORM-compliant and third-party Learning Management Systems and services."
+                            "title": "3D Game and Media Specialist",
+                            "period": "2012 - 2014",
+                            "description": "Design and implementation of 3D prototypes for educational campaigns using augmented reality, game mechanics and interactions in performance-based learning content."
                         },
                         {
                             "company": {
-                                "logo": "img/tam.png",
-                                "name": "TuesdayAfternoon Media,"
+                                "logo": "img/tcs.jpeg",
+                                "name": "TATA Consultancy Services"
                             },
-                            "title": "Senior Web Developer",
-                            "period": "2018 - 2021",
-                            "description": "Research of trends and development of technology and tools in the fields of web development and learning methodology in order to innovate and elevate the company's learning solutions."
+                            "title": "Game Designer and Developer",
+                            "period": "2010 - 2012",
+                            "description": "Responsible for project management, documentation, artwork, user experience, programming, usability testing and UI implementation of 3D applications and serious games that use augmented reality technologies along with motion and image recognition that can be deployed in stand-alone computer systems and mobile devices."
                         },
                         {
                             "company": {
-                                "logo": "img/tophat.png",
-                                "name": "Top Hat,"
+                                "logo": "img/swissvbs.png",
+                                "name": "SwissVBS"
                             },
-                            "title": "Software Developer IV",
-                            "period": "2021 - present",
-                            "description": "As part of the platform team, enhance build quality, developer performance and accessibility for users. Ensure that web components are compliant with web standards and AODA, WCAG 2.0 Level A, and Level AA requirements."
+                            "title": "Media Developer-3D Specialist",
+                            "period": "2008 - 2009",
+                            "description": "Create e-learning modules including visual renderings and animations in 3D using Autodesk Maya, Adobe Flash, Adobe Photoshop, audio-editing software and in-house tools."
                         }
                     ],
                     "experienceQuote": {
