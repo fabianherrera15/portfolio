@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-    <div id="app" v-cloak>
-        <header>
-            <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 56}" fixed="top" :class="[atTopOfPage ? 'bg-transparent' : 'shadow bg-gradient-default']"  class="py-0 py-lg-2">
+    <div id="app" class="position-relative" v-cloak>
+        <header class="sticky-top">
+            <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 56}" class="shadow bg-gradient-default"  class="py-0 py-lg-2">
                 <b-navbar-brand href="#">
                     <span class="brand-name text-white">Fabian <strong>Herrera</strong></span>
                 </b-navbar-brand>
@@ -42,7 +42,7 @@
             </b-sidebar>
         </header>
         <main>
-            <section id="welcome">
+            <section id="welcome" tabindex="-1">
                 <b-container fluid class="position-relative pb-8 pt-5 pt-lg-8 d-flex align-items-center welcome-jumbotron">
                     <span class="position-absolute bg-gradient-success"></span>
                     <b-container class="d-flex align-items-center">
@@ -56,7 +56,7 @@
                     </b-container>
                 </b-container>
             </section>
-            <section id="about" class="py-5">
+            <section id="about" tabindex="-1" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -78,7 +78,7 @@
                     </b-row>
                 </b-container>
             </section>
-            <section id="portfolio" class="py-5">
+            <section id="portfolio" tabindex="-1" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -118,7 +118,7 @@
                     </b-row>
                 </b-container>
             </b-container> -->
-            <section id="experience" class="pt-5">
+            <section id="experience" tabindex="-1" class="pt-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -159,7 +159,7 @@
                     </b-row>
                 </b-container>
             </b-container>
-            <section id="skills" class="py-5">
+            <section id="skills" tabindex="-1" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -191,7 +191,7 @@
                     </b-row>
                 </b-container>
             </section>
-            <section id="education" class="pt-5">
+            <section id="education" tabindex="-1" class="pt-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -229,7 +229,7 @@
                     </b-row>
                 </b-container>
             </b-container>
-            <section id="interests" class="py-5">
+            <section id="interests" tabindex="-1" class="py-5">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -251,7 +251,7 @@
                     </b-row>
                 </b-container>
             </section>
-            <section id="awards" class="py-5 bg-gradient-success position-relative">
+            <section id="awards" tabindex="-1" class="py-5 bg-gradient-success position-relative">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -290,7 +290,7 @@
                     </svg>
                 </div> -->
             </section>
-            <section id="contact" class="py-5 bg-default">
+            <section id="contact" tabindex="-1" class="py-5 bg-default">
                 <b-container>
                     <b-row>
                         <b-col>
@@ -1019,15 +1019,14 @@
                 scrollToElement: function(id){
                     if (hash !== "") {
                         var hash = '#'+id;
-                        $('html, body').animate({
-                            scrollTop: $(hash).offset().top - 48
-                        }, 800, function() {
-                            if (history.pushState) {
-                                history.pushState(null, null, hash); 
-                            } else {
-                                window.location.hash = hash;
-                            } 
-                        });   
+                        const element = document.getElementById(id);
+                        element.scrollIntoView(true);
+                        if (history.pushState) {
+                            history.pushState(null, null, hash); 
+                            element.focus()
+                        } else {
+                            window.location.hash = hash;
+                        }  
                     }
                 },
                 onSubmit: function(token){
