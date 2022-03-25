@@ -398,7 +398,9 @@
                 <b-container>
                     <b-row>
                         <b-col class="d-flex justify-content-between align-items-center">
-                            <span class="small" v-html="$t('copyright')"></span>
+                            <div class="small">
+                                © <span id="copyright-year"></span> <span v-html=" $t('copyright')"></span>
+                            </div>
                             <b-button :aria-label="$t('scrollTop')" variant="transparent" class="p-0 my-2 no-shadow" @click="scrollToElement('welcome')">
                                 <b-icon font-scale="2" icon="arrow-up-circle"></b-icon>
                             </b-button>
@@ -989,7 +991,7 @@
                     "nextJob": "Your company here!",
                     "submit": "Submit",
                     "scrollTop": "Back to top",
-                    "copyright": "© 2021 fabianherrera.ca. All rights reserved."
+                    "copyright": "fabianherrera.ca. All rights reserved."
                 }    
             }
         });
@@ -1034,6 +1036,7 @@
                 window.addEventListener('scroll', this.handleScroll);
             },
             mounted: function(){
+                document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
             }
         }).$mount('#app');
     </script>
