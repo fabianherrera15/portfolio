@@ -15,30 +15,32 @@
 </head>
 <body>
     <div id="app" v-cloak>
-        <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 56}" fixed="top" :class="[atTopOfPage ? 'bg-transparent' : 'shadow bg-gradient-default']"  class="py-0 py-lg-2">
-            <b-navbar-brand href="#">
-                <span class="brand-name text-white">Fabian <strong>Herrera</strong></span>
-            </b-navbar-brand>
-            <b-collapse is-nav>
-                <b-navbar-nav class="ml-auto">
-                    <b-nav-item class="text-white" @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
-                </b-navbar-nav>
-            </b-collapse>
-            <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3 no-shadow" v-b-toggle.sidebar>
-                <b-icon class="text-white" font-scale="2" icon="list"></b-icon>
-            </b-button>
-        </b-navbar>
-        <b-sidebar id="sidebar" aria-labelledby="sidebar-title" right shadow backdrop no-header>
-            <template #default="{ hide }">
-                <div class="px-4 py-3 modal-header border-0">
-                    <h5 class="mb-0" id="sidebar-title" v-html="$t('menu')"></h4>
-                    <button variant="" class="ml-auto close" aria-label="Close" @click="hide">×</button>
-                </div>
-                <b-nav v-b-scrollspy="{offset: 56}" vertical>
-                    <b-nav-item link-classes="text-muted py-3 px-4" v-b-toggle.sidebar @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
-                </b-nav>
-            </template>
-        </b-sidebar>
+        <header>
+            <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 56}" fixed="top" :class="[atTopOfPage ? 'bg-transparent' : 'shadow bg-gradient-default']"  class="py-0 py-lg-2">
+                <b-navbar-brand href="#">
+                    <span class="brand-name text-white">Fabian <strong>Herrera</strong></span>
+                </b-navbar-brand>
+                <b-collapse is-nav>
+                    <b-navbar-nav class="ml-auto">
+                        <b-nav-item class="text-white" @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
+                    </b-navbar-nav>
+                </b-collapse>
+                <b-button class="d-block d-lg-none bg-transparent border-0 py-3 mr-n3 no-shadow" v-b-toggle.sidebar>
+                    <b-icon class="text-white" font-scale="2" icon="list"></b-icon>
+                </b-button>
+            </b-navbar>
+            <b-sidebar id="sidebar" aria-labelledby="sidebar-title" right shadow backdrop no-header>
+                <template #default="{ hide }">
+                    <div class="px-4 py-3 modal-header border-0">
+                        <h5 class="mb-0" id="sidebar-title" v-html="$t('menu')"></h5>
+                        <button variant="" class="ml-auto close" aria-label="Close" @click="hide">×</button>
+                    </div>
+                    <b-nav v-b-scrollspy="{offset: 56}" vertical>
+                        <b-nav-item link-classes="text-muted py-3 px-4" v-b-toggle.sidebar @click.prevent="scrollToElement(section.id)" :href="'#'+section.id" v-for="(section, index) in $t('sections')">{{section.title}}</b-nav-item>
+                    </b-nav>
+                </template>
+            </b-sidebar>
+        </header>
         <main>
             <section id="welcome">
                 <b-container fluid class="position-relative pb-8 pt-5 pt-lg-8 d-flex align-items-center welcome-jumbotron">
@@ -361,12 +363,12 @@
                                             <b-list-group>
                                                 <b-list-group-item class="d-flex align-items-center border-0 bg-transparent px-0">
                                                     <b-button href="mailto:me@fabianherrera.ca" variant="primary" class="mb-2">
-                                                        <b-icon variant="white" class="mr-3" icon="envelope-fill"></b-icon>Email
+                                                        <b-icon aria-hidden="true" variant="white" class="mr-3" icon="envelope-fill"></b-icon>Email
                                                     </b-button>
                                                 </b-list-group-item>
                                                 <b-list-group-item class="d-flex align-items-center border-0 bg-transparent px-0">
                                                     <b-button target="_blank" href="https://www.linkedin.com/in/fabianherrera15/" variant="primary" class="mb-2">
-                                                        <b-icon variant="white" class="mr-3" icon="linkedin"></b-icon>LinkedIn
+                                                        <b-icon aria-hidden="true" variant="white" class="mr-3" icon="linkedin"></b-icon>LinkedIn
                                                     </b-button>
                                                 </b-list-group-item>
                                             </b-list-group>
