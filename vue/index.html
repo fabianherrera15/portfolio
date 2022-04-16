@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app" class="position-relative" v-cloak>
-        <header class="sticky-top">
+        <header id="app-header" class="fixed-top">
             <b-navbar type="dark" toggleable="lg" v-b-scrollspy="{offset: 56}" class="shadow bg-gradient-default"  class="py-0 py-lg-2">
                 <b-navbar-brand href="#">
                     <span class="brand-name text-white">Fabian <strong>Herrera</strong></span>
@@ -1000,7 +1000,7 @@
         new Vue({
             i18n,
             data: {
-                atTopOfPage: true,
+                lastScrollTop: 0,
                 isFormVisible: false,
                 form: {
                     name: "",
@@ -1009,12 +1009,14 @@
                 }
             },
             methods: {
-                handleScroll: function(){
-                    if(window.pageYOffset>544){
-                        if(this.atTopOfPage) this.atTopOfPage = false;
-                    }else{
-                        if(!this.atTopOfPage) this.atTopOfPage = true;
+                handleScroll: function(e){
+                    var st = window.pageYOffset || document.documentElement.scrollTop
+                    if (st > this.lastScrollTop){
+                        document.getElementById('app-header').classList.add("hide")
+                    } else {
+                        document.getElementById('app-header').classList.remove("hide")
                     }
+                    this.lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
                 },
                 scrollToElement: function(id){
                     if (hash !== "") {

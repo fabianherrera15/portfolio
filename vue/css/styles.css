@@ -18,8 +18,12 @@ body {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   color: #32325d;
 }
-nav.navbar{
-  transition: all .15s ease;
+header {
+  top: 0px;
+  transition: all .35s ease;
+}
+header.hide {
+  top: -77px;
 }
 .brand-name{
   font-weight: 300;
